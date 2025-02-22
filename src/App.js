@@ -1,16 +1,10 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Survey from "./Survey";
+import Nav from "./NavBar";
 
 const Home = () => {
   return (
     <div>
-      {/* Navigation Bar */}
-      <nav style={{ padding: "10px", background: "#eee", marginBottom: "20px" }}>
-        <Link to="/" style={{ marginRight: "15px" }}>Home</Link>
-        <Link to="/survey" style={{ marginRight: "15px" }}>Survey</Link>
-        <Link to="/resources" style={{ marginRight: "15px" }}>Resources</Link>
-        <Link to="/values">Indigenous Values</Link>
-      </nav>
 
       {/* Hero Section */}
       <header style={{ textAlign: "center", padding: "20px" }}>
@@ -102,6 +96,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
+        <Nav />
         <Route path="/" element={<Home />} />
         <Route path="/survey" element={<Survey />} />
         <Route path="/resources" element={<Resources />} />
