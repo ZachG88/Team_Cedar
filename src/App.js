@@ -101,6 +101,7 @@ const App = () => {
         <Route path="/survey" element={<Survey />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/values" element={<IndigenousValues />} />
+        <Route path="*" element={<Home />} />
       </Routes>
     </Router>
   );
