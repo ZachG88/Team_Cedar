@@ -1,7 +1,7 @@
 {
   "name": "team_cedar",
   "version": "0.1.0",
-  "homepage": "https://zachg88.github.io/Team_Cedar",
+  "homepage": "https://zachg88.github.io/Team_Cedar/",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
