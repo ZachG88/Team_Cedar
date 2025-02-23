@@ -95,8 +95,8 @@ const IndigenousValues = () => {
 const App = () => {
   return (
     <Router>
+      <Nav />
       <Routes>
-        <Nav />
         <Route path="/" element={<Home />} />
         <Route path="/survey" element={<Survey />} />
         <Route path="/resources" element={<Resources />} />
