@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Team_Cedar/static/css/main.4197eab5.css",
-    "main.js": "/Team_Cedar/static/js/main.76ee5bf2.js",
-    "index.html": "/Team_Cedar/index.html",
-    "main.4197eab5.css.map": "/Team_Cedar/static/css/main.4197eab5.css.map",
-    "main.76ee5bf2.js.map": "/Team_Cedar/static/js/main.76ee5bf2.js.map"
+    "main.css": "/team-cedar/static/css/main.6e214af0.css",
+    "main.js": "/team-cedar/static/js/main.99344a37.js",
+    "index.html": "/team-cedar/index.html",
+    "main.6e214af0.css.map": "/team-cedar/static/css/main.6e214af0.css.map",
+    "main.99344a37.js.map": "/team-cedar/static/js/main.99344a37.js.map"
   },
   "entrypoints": [
-    "static/css/main.4197eab5.css",
-    "static/js/main.76ee5bf2.js"
+    "static/css/main.6e214af0.css",
+    "static/js/main.99344a37.js"
   ]
 }
