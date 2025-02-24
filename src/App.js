@@ -39,10 +39,9 @@ const Home = () => {
 
       {/* Indigenous Values Section */}
       <section style={{ padding: "20px", background: "#f1f1f1", margin: "20px 0" }}>
-        <h2>Honoring Indigenous Values</h2>
+        <h2>Our Team</h2>
         <p>
-          Conservation work is deeply connected to Indigenous knowledge and traditions. Many careers in this field emphasize 
-          stewardship, sustainability, and the protection of land, water, and cultural heritage.
+         Checkout our team
         </p>
         <Link to="/team">
           <button>Learn More</button>
