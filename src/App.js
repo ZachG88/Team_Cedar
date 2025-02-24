@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Survey from "./Survey";
 import Nav from "./NavBar";
+import OurTeam from "./Team";
 
 const Home = () => {
   return (
@@ -43,7 +44,7 @@ const Home = () => {
           Conservation work is deeply connected to Indigenous knowledge and traditions. Many careers in this field emphasize 
           stewardship, sustainability, and the protection of land, water, and cultural heritage.
         </p>
-        <Link to="/values">
+        <Link to="/team">
           <button>Learn More</button>
         </Link>
       </section>
@@ -75,22 +76,6 @@ const Resources = () => {
   );
 };
 
-// Indigenous Values Page
-const IndigenousValues = () => {
-  return (
-    <div style={{ padding: "20px" }}>
-      <h1>Indigenous Values in Conservation</h1>
-      <p>Indigenous communities have been stewards of the land for generations. Conservation careers allow us to continue these traditions while protecting natural resources.</p>
-      <ul>
-        <li><strong>Respect for Nature:</strong> Many Indigenous cultures view land, water, and wildlife as sacred.</li>
-        <li><strong>Intergenerational Knowledge:</strong> Passing down environmental knowledge ensures sustainability.</li>
-        <li><strong>Community-Based Stewardship:</strong> Conservation should benefit both nature and local communities.</li>
-      </ul>
-      <Link to="/">Back to Home</Link>
-    </div>
-  );
-};
-
 // App Component with Routing
 const App = () => {
   return (
@@ -100,7 +85,7 @@ const App = () => {
         <Route path="*" element={<Home />} />
         <Route path="/survey" element={<Survey />} />
         <Route path="/resources" element={<Resources />} />
-        <Route path="/values" element={<IndigenousValues />} />
+        <Route path="/team" element={<OurTeam />} />
       </Routes>
     </Router>
   );

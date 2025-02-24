@@ -11,3 +11,32 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* NavBar styling */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: "10px";
+  background: #582626;
+  height: 6em; 
+  padding: 0 20px; /* Optional: Adds space on the sides */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
