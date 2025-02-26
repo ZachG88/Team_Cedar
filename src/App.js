@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Survey from "./Survey";
 import Nav from "./NavBar";
-import OurTeam from "./Team";
+import About from "./About";
+import Explore from "./ExplorePage";
 
 const Home = () => {
   return (
@@ -59,22 +60,6 @@ const Home = () => {
   );
 };
 
-// Resources Page
-const Resources = () => {
-  return (
-    <div style={{ padding: "20px" }}>
-      <h1>Resources</h1>
-      <p>Here are some useful links and programs for starting a career in conservation:</p>
-      <ul>
-        <li><a href="https://www.fws.gov/careers" target="_blank" rel="noopener noreferrer">US Fish & Wildlife Careers</a></li>
-        <li><a href="https://www.fs.usda.gov/working-with-us/careers" target="_blank" rel="noopener noreferrer">US Forest Service Careers</a></li>
-        <li><a href="https://www.nature.org/en-us/about-us/careers/" target="_blank" rel="noopener noreferrer">The Nature Conservancy Jobs</a></li>
-      </ul>
-      <Link to="/">Back to Home</Link>
-    </div>
-  );
-};
-
 // App Component with Routing
 const App = () => {
   return (
@@ -83,23 +68,11 @@ const App = () => {
       <Routes>
         <Route path="*" element={<Home />} />
         <Route path="/survey" element={<Survey />} />
-        <Route path="/resources" element={<Resources />} />
-        <Route path="/team" element={<OurTeam />} />
+        <Route path="/explore" element={<Explore />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </Router>
   );
 };
 
 export default App;
-
-// import React from 'react';
-
-// function App() {
-//   return (
-//     <div>
-//       <h1>Welcome to the Natural Conservation Career Explorer</h1>
-//     </div>
-//   );
-// }
-
-// export default App;

@@ -1,20 +1,29 @@
-import { Link } from "react-router-dom";
+const teamMembers = [
+    {
+      name: "Pournami Varma",
+      image: "/pournami.png",
+      blurb: "About Pournami"
+    },
+    {
+      name: "Adora Pham",
+      image: "/adora.png",
+      blurb: "About Adora"
+    },
+    {
+      name: "Nandita Raman",
+      image: "/nandita.png",
+      blurb: "About Nandita"
+    },
+    {
+      name: "Lydia Sorbo",
+      image: "/lydia.png",
+      blurb: "About Lydia"
+    },
+    {
+      name: "Zach Gendreau",
+      image: "/zach.png",
+      blurb: "About Zach"
+    }
+  ];
 
-const OurTeam = () => {
-    return (
-      <div style={{ padding: "20px" }}>
-        <h1>Our Team</h1>
-        <p>Team members:</p>
-        <ul>
-          <li> Member 1</li>
-          <li> Member 2</li>
-          <li> Member 3</li>
-          <li> Member 4</li>
-          <li> Member 5</li>
-        </ul>
-        <Link to="/">Back to Home</Link>
-      </div>
-    );
-  };
-
-export default OurTeam;
+  export default teamMembers;

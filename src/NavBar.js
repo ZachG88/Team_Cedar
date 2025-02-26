@@ -8,12 +8,12 @@ const Nav = () => {
             <div className="nav-links">
                 <Link to="/" style={{ marginRight: "15px" }}>Home</Link>
                 <Link to="/survey" style={{ marginRight: "15px" }}>Survey</Link>
-                <Link to="/resources" style={{ marginRight: "15px" }}>Resources</Link>
+                <Link to="/explore" style={{ marginRight: "15px" }}>Explore</Link>
             </div>
 
             {/* Right-aligned external link */}
             <div  className="right-links">
-                <Link to="/team"style={{ marginRight: "15px" }}>Our Team</Link>
+                <Link to="/about"style={{ marginRight: "15px" }}>About</Link>
                 <a href="https://nwifc.org/" target="_blank" rel="noopener noreferrer">NWIFC Website</a>         
             </div>
         </nav>
