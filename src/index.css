@@ -251,25 +251,63 @@ h1 {
 .career-info h2 {
   font-size: 1.4rem;
   margin: 10px 0;
-  color: #1e6091;
+  color: #000000;
 }
 
 .career-info p {
   font-size: 0.9rem;
-  color: #555;
+  color: #000000;
 }
 
-.career-link {
+.learn-more {
   display: inline-block;
   margin-top: 10px;
-  padding: 8px 12px;
-  background: #1e6091;
+  padding: 8px 15px;
+  background: #582626;
   color: white;
+  border-radius: 5px;
+  font-weight: bold;
   text-decoration: none;
-  border-radius: 6px;
-  transition: background 0.3s ease;
 }
 
-.career-link:hover {
-  background: #144c73;
+.learn-more:hover {
+  background: #693636;
+}
+
+/* Career Details Page */
+.career-detail-container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.career-detail-container h1 {
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+.career-image {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 15px;
+  background: #582626;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.back-button:hover {
+  background: #582626;
 }

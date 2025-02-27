@@ -6,6 +6,7 @@ import Explore from "./ExplorePage";
 import OurTeam from "./Team";
 import './App.css';
 import { color } from "framer-motion";
+import CareerDetail from "./CareerDetail";
 
 const Home = () => {
   return (
@@ -13,7 +14,7 @@ const Home = () => {
 
       {/* Hero Section */}
       <img src="/mountains.png" alt="Mountains" className="full-width-image"/>
-      <header style={{ textAlign: "center", paddingTop: "30px", paddingBottom: "200px", backgroundColor: "#311106",    }}>
+      <header style={{ textAlign: "center", paddingTop: "30px", paddingBottom: "120px", backgroundColor: "#311106",    }}>
         <h1 style={{ color: "white", fontSize: "3rem" }}>Welcome to the Natural Conservation Career Explorer</h1>
         <p style={{ color: "white", fontSize: "1.5rem", paddingBottom: "30px"}}>Discover career paths in conservation based on your interests!</p>
         <Link to="/survey">
@@ -63,7 +64,7 @@ const Home = () => {
       {/* Indigenous Values Section */}
       <section style={{ padding: "20px", background: "#f1f1f1", margin: "20px 0" }}>
         <h2>Meet the Team Behind This Project</h2>
-        <Link to="/team">
+        <Link to="/about">
           <button>Learn More</button>
         </Link>
       </section>
@@ -88,6 +89,7 @@ const App = () => {
         <Route path="*" element={<Home />} />
         <Route path="/survey" element={<Survey />} />
         <Route path="/explore" element={<Explore />} />
+        <Route path="/career/:careerId" element={<CareerDetail />} />
         <Route path="/about" element={<About />} />
       </Routes>
     </Router>
