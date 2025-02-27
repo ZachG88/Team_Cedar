@@ -6,6 +6,8 @@ import Explore from "./ExplorePage";
 import OurTeam from "./Team";
 import './App.css';
 import { color } from "framer-motion";
+import SpheresOfInterest from "./spheresOfInterest";
+import CareerPaths from "./CareerPaths";
 
 const Home = () => {
   return (
@@ -48,20 +50,54 @@ const Home = () => {
   />
 </section>
 
-      {/* Example Career Paths */}
-      <section style={{ padding: "20px" }}>
-        <h2>Explore Careers in Conservation</h2>
-        <ul>
-          <li>Water and Fisheries - e.g., Fisheries Biologist, Water Quality Manager</li>
-          <li>Forests, Land, and Wildlife - e.g., Wildlife Conservationist, Forestry Manager</li>
-          <li>Government, Law, and Treaty Protection - e.g., Policy Advisor, Tribal Law Officer</li>
-          <li>Cultural and Tribal Resources - e.g., Tribal Historic Preservation Officer, Anthropologist</li>
-          <li>Data and Technology - e.g., GIS Specialist, Environmental Data Analyst</li>
-        </ul>
-      </section>
+      {/* Find Your Path Section */}
+      <section style={{ paddingTop: "50px", paddingBottom: "200px", width: "100%", backgroundColor: "#D7CBCB"}}>
+  {/* Centered Header */}
+  <h2 style={{ fontSize: "4rem", marginBottom: "10px", textAlign: "center" }}>Find Your Path</h2>
+
+  {/* Flexbox for Left (Circles) & Right (Text Box) */}
+  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", maxWidth: "1200px", margin: "0 auto" }}>
+    
+    {/* Left Section - Circles */}
+    <div style={{ flex: "1", textAlign: "right" }}>
+      <div style={{ marginLeft: "-150px", marginBottom: "100px" }}> 
+        <SpheresOfInterest />
+      </div>
+    </div>
+
+    {/* Right Section - Text Box */}
+    <div style={{ flex: "1", borderRadius: "50px", maxWidth: "500px", minHeight: "500px"}}>
+    <h3 style={{ fontSize: "3rem", margin: "20px 0"}}>Spheres of Interest</h3>
+      <p style={{ fontSize: "2rem", color: "#311106"}}>
+        Rather than the type of career, these spheres of interest describe the kinds of fields careers are situated in. Hover over each circle to learn more about the various spheres of interest for nature conservation careers. *This will populate with corresponding description of circle when hovered.
+      </p>
+    </div>
+
+  </div>
+
+  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", maxWidth: "1200px", margin: "0 auto" }}>
+    
+  <div style={{ flex: "1", borderRadius: "50px", marginLeft: "-50px", maxWidth: "500px", minHeight: "500px"}}>
+    <h3 style={{ fontSize: "3rem", margin: "20px 0", paddingTop: "50px",}}>Career Paths</h3>
+      <p style={{ fontSize: "2rem", color: "#311106"}}>
+        In addition to spheres of interest, nature conservation careers cover a wide variety of career categories. These categories describe the kind of job, point more towards the educational experience and skills required. Hover over each circle to learn more about the various career paths for nature conservation careers. *This will populate with corresponding description of circle when hovered.
+      </p>
+    </div>
+
+    {/* Left Section - Circles */}
+    <div style={{ flex: "1", textAlign: "left" }}>
+      <div style={{ marginLeft: "150px", marginBottom: "100px" }}> 
+        <CareerPaths/>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
 
       {/* Indigenous Values Section */}
-      <section style={{ padding: "20px", background: "#f1f1f1", margin: "20px 0" }}>
+      <section style={{ padding: "20px", background: "#f1f1f1", }}>
         <h2>Meet the Team Behind This Project</h2>
         <Link to="/team">
           <button>Learn More</button>

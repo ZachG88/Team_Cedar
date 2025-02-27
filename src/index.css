@@ -273,3 +273,45 @@ h1 {
 .career-link:hover {
   background: #144c73;
 }
+
+/* Spheres of Interest Visualization */
+
+.circle-container {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  transition: transform 0.2s ease-in-out;
+}
+
+.circle-text {
+  text-align: center;
+  pointer-events: none;
+}
+
+.tooltip {
+  position: absolute;
+  top: 60px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
