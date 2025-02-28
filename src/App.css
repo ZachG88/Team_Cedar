@@ -28,13 +28,6 @@
   color: #61dafb;
 }
 
-.full-width-image {
-  width: 100vw; 
-  height: auto;
-  padding-top: 4rem;
-  display: block;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
