@@ -8,6 +8,7 @@ import './App.css';
 import { color } from "framer-motion";
 import SpheresOfInterest from "./spheresOfInterest";
 import CareerPaths from "./CareerPaths";
+import CareerDetail from "./CareerDetail";
 
 const Home = () => {
   return (
