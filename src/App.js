@@ -15,12 +15,11 @@ const Home = () => {
     <div>
 
       {/* Hero Section */}
-      <img src="/mountains.png" alt="Mountains" className="full-width-image"/>
-      <header style={{ textAlign: "center", paddingTop: "30px", paddingBottom: "120px", backgroundColor: "#311106",    }}>
-        <h1 style={{ color: "white", fontSize: "3rem" }}>Welcome to the Natural Conservation Career Explorer</h1>
-        <p style={{ color: "white", fontSize: "1.5rem", paddingBottom: "30px"}}>Discover career paths in conservation based on your interests!</p>
+      <header style={{ textAlign: "center", padding: "20px" }}>
+        <h1>Welcome to the Natural Conservation Career Explorer</h1>
+        <p>Discover career paths in conservation based on your interests!</p>
         <Link to="/survey">
-          <button style={{ fontSize: "1.5rem", borderRadius: "20px"}}>Start the Survey</button>
+          <button>Start the Survey</button>
         </Link>
       </header>
 
@@ -106,10 +105,10 @@ const Home = () => {
       </section>
 
       {/* Call to Action */}
-      <section style={{ textAlign: "center", paddingTop: "30px", paddingBottom: "50px", backgroundColor: "#311106"}}>
-        <h2 style={{ color: "white", fontSize: "1.5rem"}}>Ready to Find Your Path?</h2>
+      <section style={{ textAlign: "center", padding: "20px" }}>
+        <h2>Ready to Find Your Path?</h2>
         <Link to="/survey">
-          <button style={{ fontSize: "1.2rem", borderRadius: "20px"}}>Take the Survey</button>
+          <button>Take the Survey</button>
         </Link>
       </section>
     </div>
@@ -125,7 +124,6 @@ const App = () => {
         <Route path="*" element={<Home />} />
         <Route path="/survey" element={<Survey />} />
         <Route path="/explore" element={<Explore />} />
-        <Route path="/career/:careerId" element={<CareerDetail />} />
         <Route path="/about" element={<About />} />
       </Routes>
     </Router>
