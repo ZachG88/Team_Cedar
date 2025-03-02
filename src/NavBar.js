@@ -6,9 +6,18 @@ const Nav = () => {
         <nav >
             {/* Left side links */}
             <div className="nav-links">
-                <Link to="/" style={{ marginRight: "15px" }}>Home</Link>
-                <Link to="/survey" style={{ marginRight: "15px" }}>Survey</Link>
-                <Link to="/explore" style={{ marginRight: "15px" }}>Explore</Link>
+                <Link to="/" style={{ marginRight: "15px" }}>
+                    <img src="/Home_vec.png" alt="Home" className="nav-icon" />
+                    Home
+                </Link>
+                <Link to="/survey" style={{ marginRight: "15px" }}>
+                <img src="/Survey_vec.png" alt="Survey" className="nav-icon" />
+                    Survey
+                </Link>
+                <Link to="/explore" style={{ marginRight: "15px" }}>
+                <img src="/Explore_vec.png" alt="Explore" className="nav-icon" />
+                    Explore
+                </Link>
             </div>
 
             {/* Right-aligned external link */}

@@ -1,15 +1,85 @@
-//import { useState } from "react";
 import { findBestCareers } from "./MatchCareers";
 import { Link } from "react-router-dom";
-import careers from "./CareersEx";
+import questions from "./Questions";
+
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { FaArrowLeft, FaArrowRight, FaCheckCircle, FaRedoAlt } from "react-icons/fa";
+import styled from "styled-components";
+import RadarChart from "./RadarPlot";
 
 
-import { useState } from "react";
+const SurveyContainer = styled.div`
+max-width: 50em;
+margin: auto;
+padding: 30px;
+text-align: center;
+`;
+
+const OptionButton = styled(motion.button)`
+width: 100%;
+padding: 10px;
+margin: 8px 0;
+border: none;
+border-radius: 8px;
+background: ${({ selected }) => (selected ? "#582626" : "#ddd")};
+color: ${({ selected }) => (selected ? "#fff" : "#000")};
+font-size: 16px;
+cursor: pointer;
+transition: background 0.3s ease;
+&:hover {
+    background: ${({ selected }) => (selected ? "#582626" : "#ccc")};
+}
+`;
+
+const Navigation = styled.div`
+display: flex;
+justify-content: space-between;
+margin-top: 20px;
+`;
+
+const MatchCard = styled(motion.div)`
+background: #f4f4f4;
+padding: 10px;
+margin: 10px 0;
+border-radius: 8px;
+box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+`;
+
+const ResetButton = styled.button`
+  background-color: #582626;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 40px;
+  &:hover {
+    background-color: #582626;
+  }
+`;
 
 const Survey = () => {
 
-    const [userVector, setUserVector] = useState([0, 0, 0, 0, 0]); // Initial probability vector
-  
+    const loadSurveyData = () => {
+        const savedVector = localStorage.getItem("userVector");
+        const savedOptions = localStorage.getItem("selectedOptions");
+        const savedMatches = localStorage.getItem("matches");
+
+        return {
+            userVector: savedVector ? JSON.parse(savedVector) : [0, 0, 0, 0, 0],
+            selectedOptions: savedOptions ? JSON.parse(savedOptions) : {},
+            matches: savedMatches ? JSON.parse(savedMatches) : []
+        };
+    };
+
+    const [userVector, setUserVector] = useState(loadSurveyData().userVector);
+    const [selectedOptions, setSelectedOptions] = useState(loadSurveyData().selectedOptions);
+    const [matches, setMatches] = useState(loadSurveyData().matches);
+    const [currentQuestion, setCurrentQuestion] = useState(0);
+
     // Function to update user vector based on answer
     const handleAnswer = (adjustments, questionIndex, optionIndex) => {
         setUserVector(prevVector =>
@@ -20,101 +90,12 @@ const Survey = () => {
             [questionIndex]: optionIndex, // Track which option was selected
         }));
     };
-  
-    const [matches, setMatches] = useState([]);
-  
+
     const handleFindMatches = () => {
-      setMatches(findBestCareers(userVector));
+        const newMatches = findBestCareers(userVector);
+        setMatches(newMatches);
+        localStorage.setItem("matches", JSON.stringify(newMatches));
     };
-
-    /* Survey linked card functionality */
-
-    // const handleFindMatches = () => {
-    //     const bestMatches = findBestCareers(userVector); // [{ career: "Title", score: 0.85 }, ...]
-
-    //     // Match careers by title
-    //     const matchedCareers = bestMatches.map(({ career, score }) => {
-    //         const careerData = careers.find(c => c.title === career);
-    //         return careerData ? { ...careerData, score } : null;
-    //     }).filter(Boolean);
-
-    //     setMatches(matchedCareers);
-    // };
-
-    const [selectedOptions, setSelectedOptions] = useState({});
-
-
-    const questions = [
-        {
-            question: "Which of these tasks do you like most?",
-            options: [
-                { text: "Working with water and fish", vector: [0.3, 0, 0, 0, 0] },
-                { text: "Working with animals and nature", vector: [0, 0.3, 0, 0, 0] },
-                { text: "Working with rules and laws", vector: [0, 0, 0.3, 0, 0] },
-                { text: "Protecting cultural traditions", vector: [0, 0, 0, 0.3, 0] },
-                { text: "Using technology to help the environment", vector: [0, 0, 0, 0, 0.3] }
-            ]
-        },
-        {
-            question: "Do you like working in the field (outside) or doing research (at a desk)?",
-            options: [
-                { text: "I like working outside", vector: [0.2, 0.2, 0, 0.2, 0] },
-                { text: "I like doing research at a desk", vector: [0, 0, 0.3, 0, 0.3] }
-            ]
-        },
-        {
-            question: "How much do you care about protecting nature and animals?",
-            options: [
-                { text: "A lot", vector: [0.4, 0.4, 0, 0, 0] },
-                { text: "A little", vector: [0.2, 0.2, 0, 0, 0] },
-                { text: "Not much", vector: [0, 0, 0, 0, 0] }
-            ]
-        },
-        {
-            question: "Which of these interests you most?",
-            options: [
-                { text: "Working with laws and government", vector: [0, 0, 0.4, 0, 0] },
-                { text: "Protecting cultural traditions", vector: [0, 0, 0, 0.3, 0] },
-                { text: "Learning about nature and the environment", vector: [0, 0.3, 0, 0, 0] },
-                { text: "Standing up for Indigenous rights", vector: [0, 0, 0.3, 0.3, 0] }
-            ]
-        },
-        {
-            question: "How do you feel about using technology to help protect the environment?",
-            options: [
-                { text: "I’m very comfortable with technology", vector: [0, 0, 0, 0, 0.4] },
-                { text: "I’m somewhat comfortable with technology", vector: [0, 0, 0, 0, 0.2] },
-                { text: "I don’t like using technology", vector: [0, 0, 0, 0, 0] }
-            ]
-        },
-        {
-            question: "What type of work do you prefer?",
-            options: [
-                { text: "Making laws and policies", vector: [0, 0, 0.3, 0, 0] },
-                { text: "Enforcing rules and laws", vector: [0, 0, 0.3, 0, 0] },
-                { text: "Teaching people or helping the community", vector: [0, 0.2, 0, 0.3, 0] }
-            ]
-        },
-        {
-            question: "How interested are you in working on policies, laws, and regulations related to the environment?",
-            options: [
-                { text: "Very interested in creating policies and laws", vector: [0, 0, 0.4, 0, 0] },
-                { text: "Somewhat interested in helping with policies and laws", vector: [0, 0, 0.2, 0, 0] },
-                { text: "Not interested in working on policies or laws", vector: [0, 0, 0, 0, 0] }
-            ]
-        },
-        {
-            question: "How do you feel about working with new technology to solve environmental problems (e.g., analyzing data or developing solutions)?",
-            options: [
-                { text: "Very excited to use new technology for environmental solutions", vector: [0, 0, 0, 0, 0.4] },
-                { text: "Somewhat interested in using technology for environmental work", vector: [0, 0, 0, 0, 0.2] },
-                { text: "Not interested in using technology", vector: [0, 0, 0, 0, 0] }
-            ]
-        }
-    ];
-    
-
-    const [currentQuestion, setCurrentQuestion] = useState(0);
 
     const handleNext = () => {
         if (currentQuestion < questions.length - 1) {
@@ -128,68 +109,137 @@ const Survey = () => {
         }
     };
 
+    const handleResetSurvey = () => {
+        setUserVector([0, 0, 0, 0, 0]);
+        setSelectedOptions({});
+        setMatches([]);
+        setCurrentQuestion(0);
+        localStorage.removeItem("userVector");
+        localStorage.removeItem("selectedOptions");
+        localStorage.removeItem("matches");
+    };
+
+    useEffect(() => {
+        // Save the state to localStorage whenever it changes
+        localStorage.setItem("userVector", JSON.stringify(userVector));
+        localStorage.setItem("selectedOptions", JSON.stringify(selectedOptions));
+    }, [userVector, selectedOptions]);
+
     return (
-        <div className="survey-container">
-            <h2>{questions[currentQuestion].question}</h2>
-            <div className="options-container">
+        <SurveyContainer >
+            <div className="progress-bar-container">
+                <div className="progress-bar"style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}></div>
+            </div>
+            <ToastContainer />
+            <motion.h2 
+                key={currentQuestion}
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 50 }}
+                transition={{ duration: 0.5 }}
+            >
+                {questions[currentQuestion].question}
+            </motion.h2>
+
+            <div>
                 {questions[currentQuestion].options.map((option, index) => (
-                    <button
-                    key={index}
-                    className={selectedOptions[currentQuestion] === index ? "selected" : ""}
-                    onClick={() => handleAnswer(option.vector, currentQuestion, index)}
-                >
-                    {option.text}
-                </button>
-                
+                    <OptionButton
+                        key={index}
+                        selected={selectedOptions[currentQuestion] === index}
+                        onClick={() => handleAnswer(option.vector, currentQuestion, index)}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        {option.text}
+                    </OptionButton>
                 ))}
             </div>
 
-            <div className="navigation">
-                <button onClick={handlePrevious} disabled={currentQuestion === 0}>
-                    Previous
+            <Navigation>
+                <button 
+                onClick={handlePrevious} 
+                disabled={currentQuestion === 0}
+                style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
+                >
+                <FaArrowLeft style={{ marginRight: "5px" }} />
+                Previous
                 </button>
+                
                 {currentQuestion < questions.length - 1 ? (
-                    <button onClick={handleNext}>Next</button>
+                    <button 
+                        onClick={handleNext}
+                        style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
+                    >
+                        Next
+                        <FaArrowRight style={{ marginLeft: "5px" }} />
+                    </button>
                 ) : (
-                    <button onClick={handleFindMatches}>Find My Career Matches</button>
+                    <button 
+                        onClick={handleFindMatches}
+                        style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
+                    >
+                        Find My Career Matches
+                        <FaCheckCircle style={{ marginLeft: "5px" }} />
+                    </button>
                 )}
+            </Navigation>
+
+            {/* <div className="match-cards-container">
+                 {matches.map((career) => (
+                    <div key={career.id} className="career-card">
+                        <img src={career.image || ""} alt={career.title} className="career-image" />
+                        <div className="career-info">
+                            <h3>{career.title}</h3>
+                            <p>{career.duties ? career.duties.substring(0, 100) : "No description available"}...</p>
+                            <p><strong>Match Score:</strong> {Math.round(career.score * 100)}%</p>
+                            <Link to={`/career/${career.id}`} className="learn-more">
+                                Learn More
+                            </Link>
+                        </div>
+                    </div>
+                ))}
+            </div> */}
+
+            <div className="match-cards-container">
+            {matches.map((career) => (
+                <div key={career.id} className="career-card">
+                <div className="career-card-inner">
+                    {/* Front of the card */}
+                    <div className="career-card-front">
+                    <img src={career.image || ""} alt={career.title} className="career-image" />
+                    <div className="career-info">
+                        <h3>{career.title}</h3>
+                        
+                    </div>
+                    </div>
+                    {/* Back of the card */}
+                    <div className="career-card-back">
+                    <h3>{career.title}</h3>
+                    <p>{career.duties ? career.duties.substring(0, 380) : "No description available"}</p>
+                    <Link to={`/career/${career.id}`} className="learn-more">
+                        Learn More
+                    </Link>
+                    </div>
+                </div>
+                </div>
+            ))}
             </div>
 
             {matches.length > 0 && (
-                <div className="match-cards-container">
-                    {matches.slice(0, 3).map(({ career, score }) => (
-                        <div key={career} className="match-card">
-                            <h3>{career}</h3>
-                            <p>Match: {Math.round(score * 100)}%</p>
-                        </div>
-                    ))}
+                <div>
+                <h2>Your Career Matches</h2>
+                {/* Render Radar Chart with userVector */}
+                <RadarChart userVector={userVector} careerMatches={matches} />
                 </div>
             )}
 
+            <ResetButton onClick={handleResetSurvey}>
+                <FaRedoAlt style={{ marginRight: "5px" }} />
+                Restart Survey
+            </ResetButton>
 
-             {/* {matches.length > 0 && (
-                <div className="match-cards-container">
-                    {matches.map((career) => (
-                        <div key={career.id} className="career-card">
-                            <img src={career.image} alt={career.title} className="career-image" />
-                            <div className="career-info">
-                                <h3>{career.title}</h3>
-                                <p>{career.description.substring(0, 100)}...</p>
-                                <p><strong>Match Score:</strong> {Math.round(career.score * 100)}%</p>
-                                <Link to={`/career/${career.id}`} className="learn-more">
-                                    Learn More
-                                </Link>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            )} */}
-
-
-            
-        </div>
+        </SurveyContainer>
     );
 };
 
-  
 export default Survey;
