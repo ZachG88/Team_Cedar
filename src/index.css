@@ -106,7 +106,8 @@ button:hover {
   height: 10px;
   background-color: #ddd;
   border-radius: 5px;
-  margin-bottom: 15px;
+  margin-top: 30px;
+  margin-bottom: 50px;
   overflow: hidden;
 }
 
@@ -139,7 +140,7 @@ button:hover {
 
 /* About styling */
 .about-container {
-  max-width: 800px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 40px 20px;
 }
