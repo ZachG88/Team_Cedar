@@ -43,6 +43,9 @@ const Home = () => {
       with wildlife, or advocating for sustainable practices, you have the power to make a meaningful impact on the land, water,
       and communities you care about in your career.
     </p>
+    <Link to="/about">
+          <button className="learn-more-button">Learn More</button>
+    </Link>
   </div>
   <img
     src="aboutPic.png"
@@ -52,24 +55,60 @@ const Home = () => {
 </section>
 
 {/* Find Your Path Section */}
-<section style={{ paddingTop: "50px", paddingBottom: "200px", width: "100%", backgroundColor: "#D7CBCB"}}>
-    
-    {/* Centered Header */}
-    <h2 style={{ fontSize: "4rem", marginBottom: "10px", textAlign: "center" }}>Find Your Path</h2>
+<section
+  style={{
+    position: "relative",
+    width: "100%",
+    minHeight: "100vh",
+    paddingTop: "50px",
+    paddingBottom: "750px",
+    backgroundColor: "#D7CBCB",
+    overflow: "hidden", 
+  }}
+>
+  <div style={{ textAlign: "center" }}>
+    <h2 style={{ fontSize: "4rem", marginBottom: "40px" }}>Find Your Path</h2>
+    <div
+      style={{
+        width: "70%", 
+        maxWidth: "1000px",
+        height: "2px",
+        backgroundColor: "#000",
+        margin: "0 auto",
+      }}
+    />
+  </div>
 
+  {/* Spheres of Interest section */}
+  <div
+    style={{
+      position: "absolute",
+      top: "230px", 
+      left: "50%",
+      transform: "translateX(-50%)",
+      width: "1500px", 
+      height: "800px", 
+      overflow: "hidden",
+    }}
+  >
     <SpheresOfInterest />
+  </div>
 
-    <CareerPaths/>
-
+  {/* Career Paths section */}
+  <div
+    style={{
+      position: "absolute",
+      top: "1050px", 
+      left: "50%",
+      transform: "translateX(-50%)",
+      width: "1800px",
+      height: "800px", 
+      overflow: "hidden",
+    }}
+  >
+    <CareerPaths />
+  </div>
 </section>
-
-
-      <section style={{ padding: "20px", background: "#f1f1f1", margin: "20px 0" }}>
-        <h2>Meet the Team Behind This Project</h2>
-        <Link to="/about">
-          <button>Learn More</button>
-        </Link>
-      </section>
 
       {/* Call to Action */}
       <section style={{ textAlign: "center", paddingTop: "30px", paddingBottom: "50px", backgroundColor: "#311106"}}>
