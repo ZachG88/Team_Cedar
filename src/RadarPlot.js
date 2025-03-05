@@ -18,7 +18,7 @@ const RadarChart = ({ userVector, careerMatches }) => {
     ],
     datasets: [
       {
-        label: "User Preferences",
+        label: "Your Preferences",
         data: userVector, // Pass the user vector as data
         backgroundColor: "rgba(50, 54, 132, 0.24)",
         borderColor: "rgb(27, 68, 95)",
@@ -59,12 +59,18 @@ const RadarChart = ({ userVector, careerMatches }) => {
       },
       legend: {
         position: "top",
+        labels: {
+          color: "#222", // Darker text
+          flexDirection: "column",
+          font: { size: 20, weight: "bold" },
+          boxWidth: 15, // Adjust legend box size
+        },
       },
     },
   };
 
   return (
-    <div>
+    <div style={{ width: "100%", margin: "auto", paddingTop: "50px" }}>
       <Radar data={data} options={options} />
     </div>
   );
