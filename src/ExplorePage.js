@@ -2,19 +2,36 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import careers from "./CareersEx";
+import careerImages from "./CareerImages.json";
 
 const Explore = () => {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("");
 
+  const spheres = [
+    "Water and Fisheries",
+    "Forests, Land, and Wildlife",
+    "Government, Law, and Treaty Protection",
+    "Cultural and Tribal Resources",
+    "Data and Technology",
+  ];
+
   const truncateText = (text, maxLength) => {
     return text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
   };
 
-  const filteredCareers = careers.filter((career) =>
-    career.title.toLowerCase().includes(search.toLowerCase()) &&
-    (filter ? career.skills.includes(filter) || career.education.includes(filter) : true)
-  );
+  const filteredCareers = careers.filter((career) => {
+    const maxIndex = career.vector.indexOf(Math.max(...career.vector)); // Find highest value index in vector
+    return (
+      career.title.toLowerCase().includes(search.toLowerCase()) &&
+      (filter ? maxIndex === spheres.indexOf(filter) : true) // Match selected sphere
+    );
+  });
+
+  const getRandomImage = (careerId) => {
+    const index = Math.abs(careerId.split("").reduce((acc, char) => acc + char.charCodeAt(0), 0)) % careerImages.length;
+    return careerImages[index]; // Assign a consistent random image based on career ID
+    };
 
   return (
     <div className="career-library">
@@ -30,10 +47,10 @@ const Explore = () => {
           className="search-bar"
         />
         <select onChange={(e) => setFilter(e.target.value)} className="filter-dropdown">
-          <option value="">All Fields</option>
-          <option value="Biology">Biology</option>
-          <option value="Policy">Policy</option>
-          <option value="Technology">Technology</option>
+            <option value="">All Spheres</option>
+            {spheres.map((sphere, index) => (
+                <option key={index} value={sphere}>{sphere}</option>
+            ))}
         </select>
       </div>
 
@@ -44,7 +61,12 @@ const Explore = () => {
             <div className="career-card-inner">
               {/* Front of the Card */}
               <div className="career-card-front">
-                <img src={career.image} alt={career.title} />
+                {/* <img src={career.image} alt={career.title} /> */}
+                <img 
+                    //src={career.image || getRandomImage(career.id)} 
+                    src={getRandomImage(career.id)} 
+                    alt={career.title} 
+                />
                 <h2>{career.title}</h2>
               </div>
 

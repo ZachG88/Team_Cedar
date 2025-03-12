@@ -117,6 +117,24 @@ button:hover {
   transition: width 0.3s ease-in-out;
 }
 
+.match-results {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5em;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+}
+
+.match-results h2 {
+  font-size: 3em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.interest-section {
+  padding-top: 10em;
+}
+
 
 
 /*Career Match Cards*/
@@ -127,13 +145,43 @@ button:hover {
   margin-top: 20px;
 }
 
-.match-card {
+.career-card {
   background: #f0f8ff; /* Light blue background */
   border-radius: 10px;
   padding: 20px;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 200px;
+}
+
+.career-card-back {
+  display: flex;
+  flex-direction: column;  /* Stack elements vertically */
+  justify-content: space-between; /* Pushes items apart */
+  height: 100%;  /* Ensures full height */
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.career-card-back p {
+  flex-grow: 1; /* Allows the text to take up remaining space */
+}
+
+.learn-more{
+  margin-top: auto;
+  background-color: #582626;
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 2em;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
 }
 
 
@@ -169,6 +217,29 @@ button:hover {
 .about-sponsors {
   background: #e9e9e9;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.sponsor-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.sponsor-container .sponsor {
+  margin-bottom: 5em;
+}
+
+.sponsor-container a {
+  background-color: #311106;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
 }
 
 /* Team Section */
@@ -391,4 +462,82 @@ h1 {
   font-size: 10px;
   white-space: nowrap;
 }
+
+/* Top 3 Spheres */
+.top-spheres-section {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.sphere-list {
+  list-style: none;
+  padding: 0;
+}
+
+.sphere-item {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.sphere-score {
+  color: #555;
+  font-size: 16px;
+}
+
+
+/* Career Details Page */
+.career-detail-container {
+  max-width: 60em;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.career-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  margin: 1em 0;
+}
+
+.career-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1.5em;
+}
+
+.career-duties {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-top: 1.5em;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  background-color: #582626;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #361a1a;
+}
+
 

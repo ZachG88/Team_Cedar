@@ -9,13 +9,22 @@ import "react-toastify/dist/ReactToastify.css";
 import { FaArrowLeft, FaArrowRight, FaCheckCircle, FaRedoAlt } from "react-icons/fa";
 import styled from "styled-components";
 import RadarChart from "./RadarPlot";
+import careerImages from "./CareerImages.json";
 
 
 const SurveyContainer = styled.div`
-max-width: 50em;
+max-width: 40em;
 margin: auto;
 padding: 30px;
 text-align: center;
+`;
+
+const ResultsContainer = styled.div`
+max-width: 70em;
+margin: auto;
+padding: 30px;
+text-align: center;
+margin-bottom: 7em;
 `;
 
 const OptionButton = styled(motion.button)`
@@ -119,6 +128,26 @@ const Survey = () => {
         localStorage.removeItem("matches");
     };
 
+    const getTopThreeSpheres = (userVector) => {
+        const spheres = [
+            "Water and Fisheries",
+            "Forests, Land, and Wildlife",
+            "Government, Law, and Treaty Protection",
+            "Cultural and Tribal Resources",
+            "Data and Technology",
+        ];
+    
+        return userVector
+            .map((score, index) => ({ name: spheres[index], score })) // Pair names with scores
+            .sort((a, b) => b.score - a.score) // Sort in descending order
+            .slice(0, 3); // Get top 3
+    };
+
+    const getRandomImage = (careerId) => {
+        const index = Math.abs(careerId.split("").reduce((acc, char) => acc + char.charCodeAt(0), 0)) % careerImages.length;
+        return careerImages[index]; // Assign a consistent random image based on career ID
+        };
+
     useEffect(() => {
         // Save the state to localStorage whenever it changes
         localStorage.setItem("userVector", JSON.stringify(userVector));
@@ -126,120 +155,135 @@ const Survey = () => {
     }, [userVector, selectedOptions]);
 
     return (
-        <SurveyContainer >
-            <div className="progress-bar-container">
-                <div className="progress-bar"style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}></div>
-            </div>
-            <ToastContainer />
-            <motion.h2 
-                key={currentQuestion}
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 50 }}
-                transition={{ duration: 0.5 }}
-            >
-                {questions[currentQuestion].question}
-            </motion.h2>
+        <>
+            {matches.length === 0 ? (
+                <SurveyContainer>
+                    {/* Progress Bar */}
+                    <div className="progress-bar-container">
+                        <div
+                            className="progress-bar"
+                            style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
+                        ></div>
+                    </div>
+    
+                    <ToastContainer />
+    
+                    {/* Animated Question */}
+                    {questions.length > 0 && questions[currentQuestion] && (
+                        <motion.h2 
+                            key={currentQuestion}
+                            initial={{ opacity: 0, x: -50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: 50 }}
+                            transition={{ duration: 0.5 }}
+                        >
+                            {questions[currentQuestion].question}
+                        </motion.h2>
+                    )}
+    
+                    {/* Answer Options */}
+                    <div>
+                        {questions.length > 0 && questions[currentQuestion] && questions[currentQuestion].options.map((option, index) => (
+                            <OptionButton
+                                key={index}
+                                selected={selectedOptions[currentQuestion] === index}
+                                onClick={() => handleAnswer(option.vector, currentQuestion, index)}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                {option.text}
+                            </OptionButton>
+                        ))}
+                    </div>
+    
+                    {/* Navigation Buttons */}
+                    <Navigation>
+                        <button 
+                            onClick={handlePrevious} 
+                            disabled={currentQuestion === 0}
+                            style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
+                        >
+                            <FaArrowLeft style={{ marginRight: "5px" }} />
+                            Previous
+                        </button>
+                        
+                        {currentQuestion < questions.length - 1 ? (
+                            <button 
+                                onClick={handleNext}
+                                style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
+                            >
+                                Next
+                                <FaArrowRight style={{ marginLeft: "5px" }} />
+                            </button>
+                        ) : (
+                            <button 
+                                onClick={handleFindMatches}
+                                style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
+                            >
+                                Find My Career Matches
+                                <FaCheckCircle style={{ marginLeft: "5px" }} />
+                            </button>
+                        )}
+                    </Navigation>
+                </SurveyContainer>
+            ) : (
+                <ResultsContainer>
+                    <div className="match-results">
+                        {/* Career Matches Section */}
+                        <h2>Top Career Matches</h2>
+                        <div className="match-cards-container">
+                            {matches.map((career) => (
+                                <div key={career.id} className="career-card">
+                                    <div className="career-card-inner">
+                                        {/* Front of the card */}
+                                        <div className="career-card-front">
+                                            {/* <img src={career.image || ""} alt={career.title} className="career-image" /> */}
+                                            <img src={getRandomImage(career.id)} alt={career.title} className="career-image" />
+                                            <div className="career-info">
+                                                <h3>{career.title}</h3>
+                                            </div>
+                                        </div>
+                                        {/* Back of the card */}
+                                        <div className="career-card-back">
+                                            <h3>{career.title}</h3>
+                                            <p>{career.duties ? career.duties.substring(0, 380) : "No description available"}</p>
+                                            <Link to={`/career/${career.id}`} className="learn-more">
+                                                Learn More
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+    
+                        {/* Radar Chart Section */}
+                        <div className="interest-section">
+                            <h2>More About Your Interests</h2>
+                            <RadarChart userVector={userVector} careerMatches={matches} />
+                        </div>
 
-            <div>
-                {questions[currentQuestion].options.map((option, index) => (
-                    <OptionButton
-                        key={index}
-                        selected={selectedOptions[currentQuestion] === index}
-                        onClick={() => handleAnswer(option.vector, currentQuestion, index)}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        {option.text}
-                    </OptionButton>
-                ))}
-            </div>
-
-            <Navigation>
-                <button 
-                onClick={handlePrevious} 
-                disabled={currentQuestion === 0}
-                style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
-                >
-                <FaArrowLeft style={{ marginRight: "5px" }} />
-                Previous
-                </button>
-                
-                {currentQuestion < questions.length - 1 ? (
-                    <button 
-                        onClick={handleNext}
-                        style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
-                    >
-                        Next
-                        <FaArrowRight style={{ marginLeft: "5px" }} />
-                    </button>
-                ) : (
-                    <button 
-                        onClick={handleFindMatches}
-                        style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
-                    >
-                        Find My Career Matches
-                        <FaCheckCircle style={{ marginLeft: "5px" }} />
-                    </button>
-                )}
-            </Navigation>
-
-            {/* <div className="match-cards-container">
-                 {matches.map((career) => (
-                    <div key={career.id} className="career-card">
-                        <img src={career.image || ""} alt={career.title} className="career-image" />
-                        <div className="career-info">
-                            <h3>{career.title}</h3>
-                            <p>{career.duties ? career.duties.substring(0, 100) : "No description available"}...</p>
-                            <p><strong>Match Score:</strong> {Math.round(career.score * 100)}%</p>
-                            <Link to={`/career/${career.id}`} className="learn-more">
-                                Learn More
-                            </Link>
+                        <div className="top-spheres-section">
+                            <h2>Your Top 3 Spheres of Interest</h2>
+                            <ul className="sphere-list">
+                                {getTopThreeSpheres(userVector).map((sphere, index) => (
+                                    <li key={index} className="sphere-item">
+                                        <strong>{sphere.name}</strong> 
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
                     </div>
-                ))}
-            </div> */}
-
-            <div className="match-cards-container">
-            {matches.map((career) => (
-                <div key={career.id} className="career-card">
-                <div className="career-card-inner">
-                    {/* Front of the card */}
-                    <div className="career-card-front">
-                    <img src={career.image || ""} alt={career.title} className="career-image" />
-                    <div className="career-info">
-                        <h3>{career.title}</h3>
-                        
-                    </div>
-                    </div>
-                    {/* Back of the card */}
-                    <div className="career-card-back">
-                    <h3>{career.title}</h3>
-                    <p>{career.duties ? career.duties.substring(0, 380) : "No description available"}</p>
-                    <Link to={`/career/${career.id}`} className="learn-more">
-                        Learn More
-                    </Link>
-                    </div>
-                </div>
-                </div>
-            ))}
-            </div>
-
-            {matches.length > 0 && (
-                <div>
-                <h2>Your Career Matches</h2>
-                {/* Render Radar Chart with userVector */}
-                <RadarChart userVector={userVector} careerMatches={matches} />
-                </div>
+                
+                    {/* Restart Survey Button */}
+                    <ResetButton onClick={handleResetSurvey}>
+                        <FaRedoAlt style={{ marginRight: "5px" }} />
+                        Restart Survey
+                    </ResetButton>
+                </ResultsContainer>
             )}
-
-            <ResetButton onClick={handleResetSurvey}>
-                <FaRedoAlt style={{ marginRight: "5px" }} />
-                Restart Survey
-            </ResetButton>
-
-        </SurveyContainer>
+        </>
     );
+    
 };
 
 export default Survey;
