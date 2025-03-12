@@ -7,21 +7,21 @@ const spheres = [
     name: "Forests, Land, & Wildlife",
     color: "#6a7542",
     description:
-      "Dedicated to preserving forests, natural landscapes, and the wildlife that inhabits them, this field plays a crucial role in maintaining biodiversity and preventing habitat loss. It includes land stewardship and wildlife conservation efforts, often integrating traditional ecological knowledge. Careers include Forest and Conservation Program Manager, Wildlife Biologists, and Habitat Program Manager.",
+      "Dedicated to preserving forests, natural landscapes, and the wildlife that inhabits them, this field plays a crucial role in maintaining biodiversity and preventing habitat loss. It includes land stewardship and wildlife conservation efforts, often integrating traditional ecological knowledge. Careers include Forest and Conservation Program Manager, Wildlife Biologist, Habitat Program Manager, and a variety of technicians.",
   },
   {
     id: 2,
     name: "Water and Fisheries",
     color: "#4b7e93",
     description:
-      "This field focuses on protecting freshwater and marine ecosystems while ensuring the sustainability of fish populations. It involves monitoring water quality, restoring aquatic habitats, and managing fisheries to support both ecological balance and Indigenous food systems. Careers in this area include Fisheries Technician, Hatchery Manager, Watershed Restoration Coordinator, and Water Quality Specialist.",
+      "This field focuses on protecting freshwater and marine ecosystems while ensuring the sustainability of fish populations through both fisheries management and aquaculture. It involves monitoring water quality, restoring aquatic habitats, and managing fisheries to support both ecological balance and Indigenous food systems. Careers in this area include Fisheries Biologist, Hatchery Manager, Watershed Restoration Coordinator, Water Quality Specialist, and a variety of technicians. ",
   },
   {
     id: 3,
     name: "Government, Law, & Treaty Protection",
     color: "#A25050",
     description:
-      "This area focuses on creating, enforcing, and advocating for laws and policies that protect Indigenous lands, resources, and treaty rights. It involves legal work, land management, and policy development to ensure environmental justice and sovereignty. Careers include Policy Advisors and Natural Resource Manager.",
+      "This field focuses on creating, enforcing, and advocating for laws and policies that protect Indigenous lands, resources, and treaty rights. It involves legal work, land management, and policy development to ensure environmental justice and sovereignty. Careers include Tribal Attorney, Policy Advisors and Natural Resource Manager.",
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ const spheres = [
     name: "Cultural and Tribal Resources",
     color: "#9B1323",
     description:
-      "Centered on preserving Indigenous heritage, this field involves protecting sacred sites, passing down traditional ecological knowledge, and ensuring cultural sustainability through environmental stewardship. It often includes community education, land restoration, and advocacy for cultural landscapes. Careers include Cultural Resource Manager and Environmental Outreach and Education Coordinator.",
+      "Centered on preserving Indigenous heritage, this field involves protecting sacred sites, passing down traditional ecological knowledge, and ensuring cultural sustainability through environmental stewardship. It often includes community education, land restoration, and advocacy for cultural practices. Careers include Cultural Resource Manager and Environmental Outreach and Education Coordinator.",
   },
 ];
 
