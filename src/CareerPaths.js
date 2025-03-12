@@ -13,42 +13,42 @@ const bars = [
     name: "Policy, Planning, and Management",
     color: "#B71C2C",
     description:
-      "Professionals in this category develop policies, manage natural resources, and coordinate conservation projects at the tribal, local, and national levels. They analyze environmental laws, land use plans, and treaty rights to ensure sustainable and culturally appropriate practices. A background in environmental policy, law, public administration, or resource management is common, with strong skills in research, negotiation, and regulatory compliance. Careers include Environmental Policy Analyst, Habitat Program Manager, and Cultural Resources Advocate.",
+      "Professionals in this category develop policies, manage natural resources, and coordinate conservation projects at the tribal, local, and national levels. They analyze environmental laws, land-use plans, and treaty rights to ensure sustainable and culturally appropriate practices. A background in environmental policy, law, public administration, or resource management is common, with strong skills in research, negotiation, and regulatory compliance. Careers include Environmental Policy Analyst, Habitat Program Manager, and Cultural Resources Advocate.",
   },
   {
     id: 3,
     name: "Scientific and Technical Specialists",
     color: "#D15757",
     description:
-      "These careers focus on research, data analysis, and applied science to address environmental challenges. Specialists may study ecosystems, track wildlife populations, assess climate impacts, or develop sustainable solutions for land and water use. Many roles require degrees in biology, ecology, hydrology, or environmental science, along with skills in critical thinking, data modeling, and scientific communication. Careers include Wildlife Biologist, Climate Scientist, and GIS/Data Management Specialist.",
+      "These careers focus on research, data analysis, and applied science to address environmental challenges. Specialists may study ecosystems, track wildlife populations, assess climate impacts, or develop sustainable solutions for land and water use. Many roles require degrees in biology, ecology, hydrology, or environmental science, along with skills in critical thinking, data modeling, and scientific communication. Careers include Fisheries Biologist,Wildlife Biologist, Climate Scientist, and GIS/Data Management Specialist.",
   },
   {
     id: 4,
     name: "Technicians and Field Support",
     color: "#C76C48",
     description:
-      "Technicians play a hands-on role in conservation by collecting data, monitoring environmental conditions, and assisting scientists and land managers. These roles often require technical certifications or associate’s degrees in environmental science, forestry, or fisheries, along with field skills like GPS navigation, species identification, and water quality testing. Careers include Hatchery Technician, Water Quality Technician, and Geoduck Monitor.",
+      "Technicians play a hands-on role in conservation by collecting data, monitoring environmental conditions, and assisting scientists and land managers. These roles often require technical certifications or associate’s degrees in environmental science, forestry, or fisheries, along with field skills like GPS navigation, species identification, and water quality testing. Careers include Hatchery Technician, Water Quality Technician, and Habitat Technician.",
   },
   {
     id: 5,
     name: "Conservation and Restoration",
     color: "#9B1323",
     description:
-      "These careers focus on restoring natural habitats, managing land and water resources, and implementing sustainable practices. Professionals in this field may work on reforestation projects, invasive species removal, or ecological restoration using both scientific methods and traditional Indigenous knowledge. Education varies from hands-on experience to degrees in environmental science, ecology, or conservation biology. Careers include Forest and Conservation Program Manager, Fish Culturist, and Restoration Crew Lead.",
+      "These careers focus on restoring natural habitats, managing land and water resources, and implementing sustainable practices. Professionals in this field may work on reforestation projects, invasive species removal, or ecological restoration using both western scientific methods and traditional Indigenous knowledge. Education varies from hands-on experience to degrees in environmental science, ecology, or conservation biology. Careers include Forest and Conservation Program Manager, Restoration Ecologist, and Restoration Crew Lead.",
   },
   {
     id: 6,
     name: "Enforcement and Advocacy",
     color: "#A25050",
     description:
-      "These roles involve protecting natural resources, enforcing environmental laws, and advocating for Indigenous environmental rights. They may include legal work, environmental justice efforts, or natural resource law enforcement. Many professionals in this field have backgrounds in law, criminal justice, or environmental policy, with skills in investigation, conflict resolution, and treaty law. Careers include Fisheries Enforcement, Treaty Protection Advocate, and Deputy Chief.",
+      "These roles involve protecting natural resources, enforcing environmental laws, and advocating for Indigenous environmental rights. They may include legal work, environmental justice efforts, or natural resource law enforcement. Many professionals in this field have backgrounds in law, criminal justice, or environmental policy, with skills in investigation, conflict resolution, and treaty law. Careers include Fisheries Enforcement Officer, Treaty Protection Advocate, and Harvest Monitor.",
   },
   {
     id: 7,
     name: "Outreach and Administrative Support",
     color: "#9a4f30",
     description:
-      "These roles focus on education, communication, and program coordination to support conservation efforts. Professionals in this category work in public outreach and education, helping to bridge traditional knowledge and scientific research with community engagement. Strong writing, public speaking, and organizational skills are essential, with backgrounds in environmental studies, education, or communications. Careers include Environmental Outreach and Education Coordinator and Natural Resources Administrative Assistant.",
+      "These roles focus on education, communication, and program coordination to support conservation efforts. Professionals in this category work in public outreach and education, helping to bridge traditional knowledge and western scientific research with community engagement. Strong writing, public speaking, and organizational skills are essential, with backgrounds in environmental studies, education, or communications. Careers include Environmental Outreach and Education Coordinator, Environmental Education Specialist, Public Information Officer, and Natural Resources Administrative Assistant.",
   },
 ];
 
