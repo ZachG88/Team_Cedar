@@ -62,7 +62,7 @@ const Home = () => {
     minHeight: "100vh",
     paddingTop: "50px",
     paddingBottom: "750px",
-    backgroundColor: "#D7CBCB",
+    backgroundColor: "#f2f2f0",
     overflow: "hidden", 
   }}
 >
