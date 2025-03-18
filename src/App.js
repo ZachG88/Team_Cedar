@@ -48,7 +48,7 @@ const Home = () => {
     </Link>
   </div>
   <img
-    src="aboutPic.png"
+    src="aboutPic.jpeg"
     alt="About This Tool"
     style={{ width: "600px", height: "auto", borderRadius: "10px" }}
   />
