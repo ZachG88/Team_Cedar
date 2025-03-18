@@ -48,7 +48,7 @@ const Home = () => {
     </Link>
   </div>
   <img
-    src="aboutPic.png"
+    src="aboutPic.jpeg"
     alt="About This Tool"
     style={{ width: "600px", height: "auto", borderRadius: "10px" }}
   />
@@ -62,7 +62,7 @@ const Home = () => {
     minHeight: "100vh",
     paddingTop: "50px",
     paddingBottom: "750px",
-    backgroundColor: "#D7CBCB",
+    backgroundColor: "#f2f2f0",
     overflow: "hidden", 
   }}
 >
