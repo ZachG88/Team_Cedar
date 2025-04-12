@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
@@ -19,32 +22,41 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #582626;
-  height: 6em; 
-  padding: 0 20px 0 0; /* Optional: Adds space on the sides */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+  background: white;
+  height: clamp(4rem, 10vh, 6em); /* Responsive height */
+  padding: 0 clamp(1rem, 2vw, 20px) 0 0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
   z-index: 1000;
 }
 
-.nav-links, .right-links {
+.nav-links,
+.right-links {
   display: flex;
   align-items: center;
-  gap: 25px;
-  padding: 30px;
+  gap: clamp(1rem, 2vw, 25px); 
+  padding: clamp(1rem, 3vw, 30px); 
 }
- 
+
 .nav-icon {
-  width: 15px;
-  height: 15px;
-  margin-right: 8px;
+  width: clamp(0.75rem, 1vw, 15px);
+  height: clamp(0.75rem, 1vw, 15px);
+  margin-right: clamp(0.25rem, 1vw, 8px);
 }
+
+@media (max-width: 768px) {
+  .nav-icon {
+    display: none;
+  }
+}
+
 
 nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 16px;
+  font-size: clamp(10px, 1vw, 16px);
   transition: color 0.3s ease-in-out;
+  color:#465b29;
 }
 
 a:hover {
@@ -82,7 +94,7 @@ button:hover {
 }
 
 .selected {
-  background: #5a3333;
+  background: #536639;
   color: white;
   font-weight: bold;
 }
@@ -94,7 +106,7 @@ button:hover {
 }
 
 .navigation button {
-  background: #582626;
+  background: #536639;
   color: white;
 }
 
@@ -115,7 +127,7 @@ button:hover {
 
 .progress-bar {
   height: 100%;
-  background-color: #582626;
+  background-color: #536639;
   transition: width 0.3s ease-in-out;
 }
 
@@ -173,7 +185,7 @@ button:hover {
 
 .learn-more{
   margin-top: auto;
-  background-color: #582626;
+  background-color: #536639;
   text-decoration: none;
   color: white;
   font-size: 1.2rem;
@@ -192,7 +204,7 @@ button:hover {
 .about-container {
   max-width: 1500px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 150px 20px;
 }
 
 .about-section {
@@ -234,7 +246,7 @@ button:hover {
 }
 
 .sponsor-container a {
-  background-color: #311106;
+  background-color: #536639;
   color: white;
   font-size: 1.2rem;
   border: none;
@@ -528,7 +540,7 @@ h1 {
   display: inline-block;
   padding: 10px 20px;
   font-size: 1.1rem;
-  background-color: #582626;
+  background-color: #536639;
   color: white;
   border: none;
   border-radius: 5px;
@@ -539,7 +551,7 @@ h1 {
 }
 
 .back-button:hover {
-  background-color: #361a1a;
+  background-color: #536639;
 }
 
 
