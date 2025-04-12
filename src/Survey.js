@@ -15,14 +15,14 @@ import careerImages from "./CareerImages.json";
 const SurveyContainer = styled.div`
 max-width: 40em;
 margin: auto;
-padding: 30px;
+padding: 150px;
 text-align: center;
 `;
 
 const ResultsContainer = styled.div`
 max-width: 70em;
 margin: auto;
-padding: 30px;
+padding: 150px;
 text-align: center;
 margin-bottom: 7em;
 `;
@@ -33,13 +33,13 @@ padding: 10px;
 margin: 8px 0;
 border: none;
 border-radius: 8px;
-background: ${({ selected }) => (selected ? "#582626" : "#ddd")};
+background: ${({ selected }) => (selected ? "#536639" : "#ddd")};
 color: ${({ selected }) => (selected ? "#fff" : "#000")};
 font-size: 16px;
 cursor: pointer;
 transition: background 0.3s ease;
 &:hover {
-    background: ${({ selected }) => (selected ? "#582626" : "#ccc")};
+    background: ${({ selected }) => (selected ? "#536639" : "#ccc")};
 }
 `;
 
@@ -58,7 +58,7 @@ box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 `;
 
 const ResetButton = styled.button`
-  background-color: #582626;
+  background-color: #536639;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -66,7 +66,7 @@ const ResetButton = styled.button`
   cursor: pointer;
   margin-top: 40px;
   &:hover {
-    background-color: #582626;
+    background-color: #536639;
   }
 `;
 
