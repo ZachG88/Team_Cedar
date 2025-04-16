@@ -7,6 +7,8 @@ import careerImages from "./CareerImages.json";
 const Explore = () => {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("");
+  const [flippedCard, setFlippedCard] = useState(null);
+
 
   const spheres = [
     "Water and Fisheries",
@@ -57,30 +59,30 @@ const Explore = () => {
       {/* Career Grid */}
       <div className="career-grid">
         {filteredCareers.map((career) => (
-          <div key={career.id} className="career-card">
-            <div className="career-card-inner">
-              {/* Front of the Card */}
-              <div className="career-card-front">
-                {/* <img src={career.image} alt={career.title} /> */}
-                <img 
-                    //src={career.image || getRandomImage(career.id)} 
-                    src={getRandomImage(career.id)} 
-                    alt={career.title} 
-                />
-                <h2>{career.title}</h2>
-              </div>
-
-              {/* Back of the Card */}
-              <div className="career-card-back">
-                <h2>{career.title}</h2>
-                <p>{career.duties ? career.duties.substring(0, 200) : "No description available"}...</p>
-                <p><strong>Skills:</strong> {career.skills ? career.skills.substring(0, 200) : "No description available"}</p>
-                <Link to={`/career/${career.id}`} className="learn-more">
-                  Learn More
-                </Link>
+              <div
+              key={career.id}
+              className={`career-card ${flippedCard === career.id ? "flipped" : ""}`}
+              onClick={() => setFlippedCard(flippedCard === career.id ? null : career.id)}
+            >
+              <div className="career-card-inner">
+                <div className="career-card-front">
+                  <img src={getRandomImage(career.id)} alt={career.title} />
+                  <h2>{career.title}</h2>
+                  <div className="tooltip-wrapper">
+                    <span className="tooltip">Click to flip</span>
+                  </div>
+                </div>
+                <div className="career-card-back">
+                  <h2>{career.title}</h2>
+                  <p>{career.duties ? truncateText(career.duties, 200) : "No description available"}...</p>
+                  <p><strong>Skills:</strong> {career.skills ? truncateText(career.skills, 200) : "No description available"}</p>
+                  <Link to={`/career/${career.id}`} className="learn-more">
+                    Learn More
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
+            
         ))}
       </div>
     </div>
