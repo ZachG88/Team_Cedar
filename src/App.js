@@ -12,14 +12,14 @@ import CareerDetail from "./CareerDetail";
 
 const Home = () => {
   return (
-    <div>
+    <div style={{ backgroundColor: "#edfcff"}}>
 
       {/* Hero Section */}
       <div style={{ backgroundColor: "#edfcff"}}>
       <img src="/newHero.png" alt="Mountains" className="full-width-image"/>
       </div>
       <header style={{ textAlign: "center", marginTop: "-1px", paddingTop: "clamp(1rem, 5vw, 3rem)", paddingBottom: "clamp(3rem, 12vw, 15rem)", backgroundColor: "#536639",    }}>
-        <h1 style={{ color: "white", fontSize: "clamp(1.5rem, 5vw, 3.5rem)", marginTop: "0px", paddingTop: "5px"}}>Welcome to the Natural Conservation Career Explorer</h1>
+        <h1 style={{ color: "white", fontSize: "clamp(1.5rem, 5vw, 3.5rem)", marginTop: "0px", paddingTop: "5px", marginLeft: "20px", marginRight: "20px"}}>Welcome to the Natural Conservation Career Explorer</h1>
         <p style={{ color: "white", fontSize: "clamp(.7rem, 3vw, 1.5rem)", paddingBottom: "20px"}}>Discover career paths in conservation based on your interests!</p>
         <Link to="/survey">
           <button className="survey-button">Start the Survey →</button>
@@ -57,7 +57,7 @@ const Home = () => {
   className="find-your-path-section"
 >
   <div style={{ textAlign: "center" }}>
-    <h2 style={{ fontSize: "clamp(2rem, 5vw, 4rem)", marginBottom: "clamp(20px, 2vw, 40px)" }}>Find Your Path</h2>
+    <h2 style={{ fontSize: "clamp(1.5rem, 5vw, 4rem)", marginBottom: "2vh" }}>Find Your Path</h2>
     <div
       style={{
         width: "70%", 
@@ -69,30 +69,17 @@ const Home = () => {
     />
   </div>
 
-  {/* Spheres of Interest section */}
-  <div className="spheres-wrapper">
-    <SpheresOfInterest />
-  </div>
+  <SpheresOfInterest />
 
-  {/* Career Paths section */}
-  <div
-    style={{
-      position: "absolute",
-      top: "clamp(550px, 100vw, 1050px)", 
-      left: "50%",
-      transform: "translateX(-50%)",
-      width: "1800px",
-    }}
-  >
-    <CareerPaths />
-  </div>
+  <CareerPaths />
+
 </section>
 
       {/* Call to Action */}
       <div style={{
-        backgroundColor: "#edfcff"
+        backgroundColor: "#edfcff", overflow: "hidden"
       }}>
-      <img src="/trees.png" alt="trees" className="full-width-image"/>
+      <img src="/trees.png" alt="trees" className="footer-image"/>
       </div>
       <section className="call-to-action">
       <h2>Ready to Find Your Path?</h2>

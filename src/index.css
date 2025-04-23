@@ -68,7 +68,7 @@ a:hover {
 
 /* Survey Formatting */
 .survey-container {
-  max-width: 600px;
+  max-width: 1000px;
   margin: auto;
   text-align: center;
 }
@@ -123,6 +123,12 @@ button:hover {
   margin-top: 30px;
   margin-bottom: 50px;
   overflow: hidden;
+}
+
+@media (max-width: 850px) {
+  .progress-bar-container {
+    margin-top: 70px;
+  }
 }
 
 .progress-bar {
@@ -239,6 +245,11 @@ button:hover {
   justify-content: center;
   gap: 20px;
   padding: 20px;
+  align-items: center;
+}
+
+.sponsor-logo {
+  width: 30vw; 
 }
 
 .sponsor-container .sponsor {
