@@ -22,11 +22,11 @@ text-align: center;
 `;
 
 const ResultsContainer = styled.div`
-max-width: 70em;
+max-width: 100vw;
 margin: auto;
-padding: 150px;
 text-align: center;
 margin-bottom: 7em;
+background-color: #edfcff;
 `;
 
 const OptionButton = styled(motion.button)`
@@ -230,9 +230,11 @@ const Survey = () => {
                 </SurveyContainer>
             ) : (
                 <ResultsContainer>
+                    <div style={{ position: "relative", backgroundColor: "#edfcff", textAlign: "center", width: "100%" }}>
+                    <img src="/resultsBanner.png" alt="Mountains and Trees Colorful Sillouette with Results Text" className="full-width-image"/>
+                    </div>
                     <div className="match-results">
                         {/* Career Matches Section */}
-                        <h2>Top Career Matches</h2>
                         <div className="match-cards-container">
                             {matches.map((career) => (
                                 <div key={career.id} className="career-card">
