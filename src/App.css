@@ -75,57 +75,27 @@ h1 {
 
 .spheres-wrapper {
   position: absolute;
-  top: 230px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1500px;
-  height: 800px;
   overflow: hidden;
 }
 
 .spheres-text-wrapper {
   flex: 1;
-  text-align: center;
-  max-width: 500px;
-  min-height: 500px;
-  margin-top: 100px;
-  margin-right: 0;
-}
-
-/* Mobile adjustments */
-@media (max-width: 800px) {
-  .spheres-wrapper {
-    position: relative; 
-    top: 0;
-    left: 0;
-    transform: none;
-    width: 85%;
-    margin-top: 20px;
-    padding-left: 8px;
-    overflow: hidden;
-  }
-}
-
-@media (max-width: 800px) {
-  .spheres-text-wrapper {
-    flex: 1;
-    max-width: 250px;
-    margin-top: -30px;
-    margin-left: 40px;
-  }
+  text-align: left;
+  margin-top: 4vh;
+  max-width: 80vw;
 }
 
 .hover-text {
   padding-bottom: clamp(50px, 6vw, 100px);
   font-size: clamp(.8rem, 2.2vw, 2rem);
-  margin-left: 12px;
+  text-align: left;
 }
 
 @media (max-width: 800px) {
   .hover-text {
     padding-bottom: clamp(50px, 6vw, 100px);
     font-size: clamp(.8rem, 2.2vw, 2rem);
-    margin-left: 25px;
+    text-align: left;
   }
 }
 
@@ -155,28 +125,7 @@ h1 {
 }
 
 .find-your-path-section {
-  display: block;
-  position: relative;
-  width: 100%;
-  min-height: 235vh;
-  padding-top: clamp(20px, 2vw, 50px);
   background-color: #edfcff;
-  overflow: hidden;
-}
-
-@media (max-width: 800px) {
-  .find-your-path-section {
-    min-height: 180vh;
-    overflow: hidden;
-  }
-}
-
-/* then 600px */
-@media (max-width: 600px) {
-  .find-your-path-section {
-    height: 50vh;
-    overflow: hidden;
-  }
 }
 
 .page‑wrapper {
