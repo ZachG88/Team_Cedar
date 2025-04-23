@@ -61,7 +61,7 @@ const SpheresOfInterest = () => {
         flexDirection: isMobile ? "column" : "row",
         justifyContent: "space-between",
         alignItems: "center",
-        maxWidth: "1200px",
+        maxWidth: "90vw",
         margin: "0 auto",
       }}
     >
@@ -142,7 +142,7 @@ const HoverCircle = ({ name, color, index, description, setHoveredSphere }) => {
 };
 
 const containerStyle = {
-  position: "relative",
+  position: "absolute",
   width: "clamp(100px, 50vw, 670px)",
   height: "clamp(100px, 50vw, 670px)",
 };

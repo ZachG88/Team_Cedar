@@ -2,17 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap');
 
 h1 {
@@ -40,6 +29,15 @@ h1 {
   padding-top: 6rem;
   image-rendering: auto;
 }
+
+.footer-image {
+  width: 100vw; 
+  display: block;
+  padding-top: 2rem;
+  image-rendering: auto;
+  overflow: hidden;
+}
+
 
 .about-image {
   width: clamp(0px, 50vw, 600px);
@@ -95,7 +93,7 @@ h1 {
 }
 
 /* Mobile adjustments */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .spheres-wrapper {
     position: relative; 
     top: 0;
@@ -104,10 +102,11 @@ h1 {
     width: 85%;
     margin-top: 20px;
     padding-left: 8px;
+    overflow: hidden;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .spheres-text-wrapper {
     flex: 1;
     max-width: 250px;
@@ -122,7 +121,7 @@ h1 {
   margin-left: 12px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .hover-text {
     padding-bottom: clamp(50px, 6vw, 100px);
     font-size: clamp(.8rem, 2.2vw, 2rem);
@@ -134,7 +133,7 @@ h1 {
   font-size: clamp(.8rem, 2.2vw, 3rem);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .hover-text-career {
     font-size: clamp(.8rem, 2.2vw, 2rem);
   }
@@ -144,8 +143,9 @@ h1 {
   text-align: center;
   padding-top: 15px;
   margin-top: -5px;
-  padding-bottom: clamp(30px, 2vw, 50px);
+  padding-bottom: 50px;
   background-color: #536639;
+  overflow: hidden;
 }
 
 .call-to-action h2 {
@@ -155,26 +155,32 @@ h1 {
 }
 
 .find-your-path-section {
+  display: block;
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 235vh;
   padding-top: clamp(20px, 2vw, 50px);
-  padding-bottom: 750px;
   background-color: #edfcff;
   overflow: hidden;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .find-your-path-section {
-    padding-bottom: 0px;
+    min-height: 180vh;
+    overflow: hidden;
   }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* then 600px */
+@media (max-width: 600px) {
+  .find-your-path-section {
+    height: 50vh;
+    overflow: hidden;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+.page‑wrapper {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
 }

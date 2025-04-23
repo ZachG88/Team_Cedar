@@ -91,7 +91,7 @@ const CareerPaths = () => {
           </div>
         )}
       </div>
-      <div style={{ flex: "1.7"}}>
+      <div style={{ flex: "1.5"}}>
         {bars.map((bar) => (
           <Bar
             key={bar.id}

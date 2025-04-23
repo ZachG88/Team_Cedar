@@ -19,7 +19,7 @@ const Home = () => {
       <img src="/newHero.png" alt="Mountains" className="full-width-image"/>
       </div>
       <header style={{ textAlign: "center", marginTop: "-1px", paddingTop: "clamp(1rem, 5vw, 3rem)", paddingBottom: "clamp(3rem, 12vw, 15rem)", backgroundColor: "#536639",    }}>
-        <h1 style={{ color: "white", fontSize: "clamp(1.5rem, 5vw, 3.5rem)", marginTop: "0px", paddingTop: "5px"}}>Welcome to the Natural Conservation Career Explorer</h1>
+        <h1 style={{ color: "white", fontSize: "clamp(1.5rem, 5vw, 3.5rem)", marginTop: "0px", paddingTop: "5px", marginLeft: "20px", marginRight: "20px"}}>Welcome to the Natural Conservation Career Explorer</h1>
         <p style={{ color: "white", fontSize: "clamp(.7rem, 3vw, 1.5rem)", paddingBottom: "20px"}}>Discover career paths in conservation based on your interests!</p>
         <Link to="/survey">
           <button className="survey-button">Start the Survey →</button>
@@ -90,9 +90,9 @@ const Home = () => {
 
       {/* Call to Action */}
       <div style={{
-        backgroundColor: "#edfcff"
+        backgroundColor: "#edfcff", overflow: "hidden"
       }}>
-      <img src="/trees.png" alt="trees" className="full-width-image"/>
+      <img src="/trees.png" alt="trees" className="footer-image"/>
       </div>
       <section className="call-to-action">
       <h2>Ready to Find Your Path?</h2>
