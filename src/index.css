@@ -27,6 +27,7 @@ nav {
   padding: 0 clamp(1rem, 2vw, 20px) 0 0;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
   z-index: 1000;
+  top: 0;
 }
 
 .nav-links,
@@ -34,7 +35,10 @@ nav {
   display: flex;
   align-items: center;
   gap: clamp(1rem, 2vw, 25px); 
-  padding: clamp(1rem, 3vw, 30px); 
+  padding-left: 2vw;
+  padding-top: clamp(1rem, 3vw, 30px); 
+  padding-right: clamp(1rem, 3vw, 30px); 
+  padding-bottom: clamp(1rem, 3vw, 30px); 
 }
 
 .nav-icon {
@@ -57,6 +61,7 @@ nav a {
   font-size: clamp(10px, 1vw, 16px);
   transition: color 0.3s ease-in-out;
   color:#465b29;
+  z-index: 1000;
 }
 
 a:hover {
@@ -64,6 +69,9 @@ a:hover {
   transition: transform 0.3s ease-in-out;
 }
 
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
 
 
 /* Survey Formatting */
@@ -139,16 +147,16 @@ button:hover {
 
 .full-width-image {
   width: 100vw; 
+  height: auto;
   display: block;
   image-rendering: auto;
-  margin-top: -80px; 
 }
 
 .match-results {
   display: flex;
   flex-direction: column;
   padding: 1.5em;
-  background-color: #edfcff;
+  background-color: #ffffff;
   border-radius: 15px;
 }
 
@@ -160,6 +168,7 @@ button:hover {
 
 .interest-section {
   padding-top: 10em;
+  background-color: #ffffff;
 }
 
 

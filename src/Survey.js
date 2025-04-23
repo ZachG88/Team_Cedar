@@ -26,6 +26,7 @@ max-width: 100vw;
 margin: auto;
 text-align: center;
 margin-bottom: 7em;
+background-color: #edfcff;
 `;
 
 const OptionButton = styled(motion.button)`
@@ -229,25 +230,9 @@ const Survey = () => {
                 </SurveyContainer>
             ) : (
                 <ResultsContainer>
-                    <div style={{ backgroundColor: "#edfcff"}}>
-                    <img src="/resultsImage.png" alt="Mountains and Trees Colorful Sillouette" className="full-width-image"/>
-                    <h1
-    className="fade-in"
-    style={{
-      position: "absolute",
-      top: "28vw",
-      left: "50%",
-      transform: "translate(-50%, -50%)",
-      color: "white",
-      fontSize: "clamp(1.5rem, 5vw, 3.5rem)",
-      textAlign: "center",
-      textShadow: "0 2px 5px rgba(0,0,0,0.2)", // optional: improves visibility on image
-    }}
-  >
-    Top Career Matches
-  </h1>
+                    <div style={{ position: "relative", backgroundColor: "#edfcff", textAlign: "center", width: "100%" }}>
+                    <img src="/resultsBanner.png" alt="Mountains and Trees Colorful Sillouette with Results Text" className="full-width-image"/>
                     </div>
-                   
                     <div className="match-results">
                         {/* Career Matches Section */}
                         <div className="match-cards-container">
