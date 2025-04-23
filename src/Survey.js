@@ -15,7 +15,9 @@ import careerImages from "./CareerImages.json";
 const SurveyContainer = styled.div`
 max-width: 40em;
 margin: auto;
-padding: 150px;
+padding-top: 10%;
+padding-left: 20%;
+padding-right: 20%;
 text-align: center;
 `;
 
