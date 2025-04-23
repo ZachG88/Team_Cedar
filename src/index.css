@@ -144,6 +144,22 @@ button:hover {
   background-color: #536639;
   transition: width 0.3s ease-in-out;
 }
+.progress-bar-wrapper {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.progress-percent {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  font-size: 17px;
+  color: #333;
+}
+
 
 .full-width-image {
   width: 100vw; 
@@ -428,9 +444,6 @@ h1 {
   transition: transform 1s;
 }
 
-.career-card:hover .career-card-inner {
-  transform: rotateY(180deg);
-}
 
 .career-card-front, .career-card-back {
   position: absolute;
@@ -458,6 +471,58 @@ h1 {
 }
 
 .career-info {
+  padding: 15px;
+}
+
+/* Card flip on click (instead of hover) */
+.career-card {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+  cursor: pointer; /* indicates it's clickable */
+}
+
+/* Remove hover flip */
+.career-card:hover .career-card-inner {
+  transform: none;
+}
+
+.career-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+/* Flip only when class is applied */
+.career-card.flipped .career-card-inner {
+  transform: rotateY(180deg);
+}
+
+.career-card-front, .career-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.career-card-front {
+  background-color: #fff;
+}
+
+.career-card-back {
+  background-color: #f0f0f0;
+  transform: rotateY(180deg);
   padding: 15px;
 }
 
@@ -581,4 +646,28 @@ h1 {
   background-color: #536639;
 }
 
+/* Explore page tooltip */
+.tooltip-wrapper {
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip {
+  background-color: #333;
+  color: #fff;
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+/* Show tooltip on hover */
+.career-card-front:hover .tooltip {
+  opacity: 1;
+}
 

@@ -90,6 +90,8 @@ const Survey = () => {
     const [selectedOptions, setSelectedOptions] = useState(loadSurveyData().selectedOptions);
     const [matches, setMatches] = useState(loadSurveyData().matches);
     const [currentQuestion, setCurrentQuestion] = useState(0);
+    const progressPercent = Math.round(((currentQuestion + 1) / questions.length) * 100);
+ 
 
     // Function to update user vector based on answer
     const handleAnswer = (adjustments, questionIndex, optionIndex) => {
@@ -161,12 +163,16 @@ const Survey = () => {
             {matches.length === 0 ? (
                 <SurveyContainer>
                     {/* Progress Bar */}
+                    <div className="progress-bar-wrapper">
                     <div className="progress-bar-container">
                         <div
-                            className="progress-bar"
-                            style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
+                        className="progress-bar"
+                        style={{ width: `${progressPercent}%` }}
                         ></div>
                     </div>
+                    <span className="progress-percent">{progressPercent}%</span>
+                    </div>
+
     
                     <ToastContainer />
     
