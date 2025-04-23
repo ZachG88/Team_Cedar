@@ -22,9 +22,8 @@ text-align: center;
 `;
 
 const ResultsContainer = styled.div`
-max-width: 70em;
+max-width: 100vw;
 margin: auto;
-padding: 150px;
 text-align: center;
 margin-bottom: 7em;
 `;
@@ -230,9 +229,27 @@ const Survey = () => {
                 </SurveyContainer>
             ) : (
                 <ResultsContainer>
+                    <div style={{ backgroundColor: "#edfcff"}}>
+                    <img src="/resultsImage.png" alt="Mountains and Trees Colorful Sillouette" className="full-width-image"/>
+                    <h1
+    className="fade-in"
+    style={{
+      position: "absolute",
+      top: "28vw",
+      left: "50%",
+      transform: "translate(-50%, -50%)",
+      color: "white",
+      fontSize: "clamp(1.5rem, 5vw, 3.5rem)",
+      textAlign: "center",
+      textShadow: "0 2px 5px rgba(0,0,0,0.2)", // optional: improves visibility on image
+    }}
+  >
+    Top Career Matches
+  </h1>
+                    </div>
+                   
                     <div className="match-results">
                         {/* Career Matches Section */}
-                        <h2>Top Career Matches</h2>
                         <div className="match-cards-container">
                             {matches.map((career) => (
                                 <div key={career.id} className="career-card">

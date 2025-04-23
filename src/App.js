@@ -16,7 +16,7 @@ const Home = () => {
 
       {/* Hero Section */}
       <div style={{ backgroundColor: "#edfcff"}}>
-      <img src="/newHero.png" alt="Mountains" className="full-width-image"/>
+      <img src="/newHero.png" alt="Mountains and Trees Colorful Sillouette" className="full-width-image"/>
       </div>
       <header style={{ textAlign: "center", marginTop: "-1px", paddingTop: "clamp(1rem, 5vw, 3rem)", paddingBottom: "clamp(3rem, 12vw, 15rem)", backgroundColor: "#536639",    }}>
         <h1 style={{ color: "white", fontSize: "clamp(1.5rem, 5vw, 3.5rem)", marginTop: "0px", paddingTop: "5px", marginLeft: "20px", marginRight: "20px"}}>Welcome to the Natural Conservation Career Explorer</h1>

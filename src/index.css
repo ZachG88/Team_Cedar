@@ -137,11 +137,18 @@ button:hover {
   transition: width 0.3s ease-in-out;
 }
 
+.full-width-image {
+  width: 100vw; 
+  display: block;
+  image-rendering: auto;
+  margin-top: -80px; 
+}
+
 .match-results {
   display: flex;
   flex-direction: column;
   padding: 1.5em;
-  background-color: #f9f9f9;
+  background-color: #edfcff;
   border-radius: 15px;
 }
 
