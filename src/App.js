@@ -19,10 +19,10 @@ const Home = () => {
       <img src="/newHero.png" alt="Mountains and Trees Colorful Sillouette" className="full-width-image"/>
       </div>
       <header style={{ textAlign: "center", marginTop: "-1px", paddingTop: "clamp(1rem, 5vw, 3rem)", paddingBottom: "clamp(3rem, 12vw, 15rem)", backgroundColor: "#536639",    }}>
-        <h1 style={{ color: "white", fontSize: "clamp(1.5rem, 5vw, 3.5rem)", marginTop: "0px", paddingTop: "5px", marginLeft: "20px", marginRight: "20px"}}>Welcome to the Natural Conservation Career Explorer</h1>
-        <p style={{ color: "white", fontSize: "clamp(.7rem, 3vw, 1.5rem)", paddingBottom: "20px"}}>Discover career paths in conservation based on your interests!</p>
+        <h1 className="fade-in" style={{ color: "white", fontSize: "clamp(1.5rem, 5vw, 3.5rem)", marginTop: "0px", paddingTop: "5px", marginLeft: "20px", marginRight: "20px"}}>Welcome to the Natural Conservation Career Explorer</h1>
+        <p className="fade-in" style={{ color: "white", fontSize: "clamp(.7rem, 3vw, 1.5rem)", paddingBottom: "20px"}}>Discover career paths in conservation based on your interests!</p>
         <Link to="/survey">
-          <button className="survey-button">Start the Survey →</button>
+          <button className="survey-button fade-in">Start the Survey →</button>
         </Link>
       </header>
 
