@@ -41,32 +41,23 @@ const spheres = [
 ];
 
 const SpheresOfInterest = () => {
-  const [isMobile, setIsMobile] = useState(false);
   const [hoveredSphere, setHoveredSphere] = useState(null);
-
-  useEffect(() => {
-    const checkScreen = () => {
-      setIsMobile(window.innerWidth <= 600);
-    };
-    checkScreen();
-    window.addEventListener("resize", checkScreen);
-    return () => window.removeEventListener("resize", checkScreen);
-  }, []);
 
   return (
     <div
       style={{
         position: "relative",
         display: "flex",
-        flexDirection: isMobile ? "column" : "row",
-        justifyContent: "space-between",
         alignItems: "center",
+        justifyContent: "flex-start",
+        gap: "10vw",
         maxWidth: "90vw",
-        margin: "0 auto",
+        paddingLeft: "2%",
+        paddingTop: "5%",
+        paddingBottom: "10%"
       }}
     >
-      <div style={{ flex: "1", textAlign: "right" }}>
-        <div style={{ marginLeft: isMobile ? 0 : "clamp(-80px, 8vw, -120px)", marginBottom: "100px" }}>
+      <div style={{ flexShrink: 0}}>
           <div style={containerStyle}>
             {spheres.map((sphere, index) => (
               <HoverCircle
@@ -77,12 +68,11 @@ const SpheresOfInterest = () => {
               />
             ))}
           </div>
-        </div>
       </div>
       <div
         className="spheres-text-wrapper"
       >
-        <h3 style={{ fontSize: "clamp(1rem, 3vw, 3rem)", margin: "0 0" }}>
+        <h3 style={{ fontSize: "clamp(1rem, 3vw, 3rem)" }}>
           {hoveredSphere ? hoveredSphere.name : "Spheres of Interest"}
         </h3>
         <p style={{ fontSize: "clamp(.5rem, 2vw, 1.5rem)", color: "#311106" }}>
@@ -93,10 +83,7 @@ const SpheresOfInterest = () => {
         {!hoveredSphere && (
           <div
             style={{
-              marginTop: "0px",
               color: "#9f90a2",
-              display: "flex",
-              alignItems: "center",
             }}
           >
             <p className="hover-text">
@@ -124,8 +111,8 @@ const HoverCircle = ({ name, color, index, description, setHoveredSphere }) => {
         ...circleStyle,
         ...props,
         backgroundColor: color,
-        top: `${40 + 30 * Math.sin((index / spheres.length) * 2 * Math.PI)}%`,
-        left: `${40 + 30 * Math.cos((index / spheres.length) * 2 * Math.PI)}%`,
+        top: `${35 + 30 * Math.sin((index / spheres.length) * 2 * Math.PI)}%`,
+        left: `${35 + 30 * Math.cos((index / spheres.length) * 2 * Math.PI)}%`,
       }}
       onMouseEnter={() => {
         setHovered(true);
@@ -142,9 +129,11 @@ const HoverCircle = ({ name, color, index, description, setHoveredSphere }) => {
 };
 
 const containerStyle = {
-  position: "absolute",
+  position: "relative",
   width: "clamp(100px, 50vw, 670px)",
   height: "clamp(100px, 50vw, 670px)",
+  alignItems: "center",
+  justifyContent: "center"
 };
 
 const circleStyle = {

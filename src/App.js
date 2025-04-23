@@ -12,7 +12,7 @@ import CareerDetail from "./CareerDetail";
 
 const Home = () => {
   return (
-    <div>
+    <div style={{ backgroundColor: "#edfcff"}}>
 
       {/* Hero Section */}
       <div style={{ backgroundColor: "#edfcff"}}>
@@ -57,7 +57,7 @@ const Home = () => {
   className="find-your-path-section"
 >
   <div style={{ textAlign: "center" }}>
-    <h2 style={{ fontSize: "clamp(2rem, 5vw, 4rem)", marginBottom: "clamp(20px, 2vw, 40px)" }}>Find Your Path</h2>
+    <h2 style={{ fontSize: "clamp(1.5rem, 5vw, 4rem)", marginBottom: "2vh" }}>Find Your Path</h2>
     <div
       style={{
         width: "70%", 
@@ -69,23 +69,10 @@ const Home = () => {
     />
   </div>
 
-  {/* Spheres of Interest section */}
-  <div className="spheres-wrapper">
-    <SpheresOfInterest />
-  </div>
+  <SpheresOfInterest />
 
-  {/* Career Paths section */}
-  <div
-    style={{
-      position: "absolute",
-      top: "clamp(550px, 100vw, 1050px)", 
-      left: "50%",
-      transform: "translateX(-50%)",
-      width: "1800px",
-    }}
-  >
-    <CareerPaths />
-  </div>
+  <CareerPaths />
+
 </section>
 
       {/* Call to Action */}

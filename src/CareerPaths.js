@@ -65,6 +65,7 @@ const CareerPaths = () => {
         alignItems: "flex-start",
         maxWidth: "clamp(50px, 85vw, 1200px)",
         margin: "0 auto",
+        paddingBottom: "10%"
       }}
     >
       <div style={{ flex: "1.5", marginRight: "30px", marginTop: "-22px"}}>
