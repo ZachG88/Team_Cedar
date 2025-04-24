@@ -26,7 +26,7 @@ max-width: 100vw;
 margin: auto;
 text-align: center;
 margin-bottom: 7em;
-background-color: #edfcff;
+background-color: #ffffff;
 `;
 
 const OptionButton = styled(motion.button)`
@@ -294,7 +294,7 @@ const Survey = () => {
             ) : (
                 <ResultsContainer>
                     <div style={{ position: "relative", backgroundColor: "#edfcff", textAlign: "center", width: "100%" }}>
-                    <img src="/resultsBanner.png" alt="Mountains and Trees Colorful Sillouette with Results Text" className="full-width-image"/>
+                    <img src="/resultsBanner.png" alt="Mountains and Trees Colorful Sillouette with Results Text" className="full-width-image fade-in"/>
                     </div>
                     <div className="match-results">
                     <h1 style={{fontSize: "4vw", marginTop: 0}}>Top Career Matches</h1>
@@ -323,7 +323,7 @@ const Survey = () => {
                                                   backgroundColor: getTopSphereColor(career),
                                                   color: getTextColor(getTopSphereColor(career)),
                                                 }}>
-                                                  <h2>{career.title}</h2>
+                                                  <h2 style={{fontSize: "2vw"}}>{career.title}</h2>
                                                   <p>{career.duties ? truncateText(career.duties, 200) : "No description available"}...</p>
                                                   <p><strong>Skills:</strong> {career.skills ? truncateText(career.skills, 200) : "No description available"}</p>
                                                   <Link to={`/career/${career.id}`} className="learn-more">
@@ -337,12 +337,12 @@ const Survey = () => {
     
                         {/* Radar Chart Section */}
                         <div className="interest-section">
-                            <h2>More About Your Interests</h2>
-                            <RadarChart userVector={userVector} careerMatches={matches} />
+                            <h1 style={{fontSize: "4vw"}}>More About Your Interests</h1>
+                            <RadarChart userVector={userVector} careerMatches={matches}/>
                         </div>
 
                         <div className="top-spheres-section">
-                            <h2>Your Top 3 Spheres of Interest</h2>
+                            <h1>Your Top 3 Spheres of Interest</h1>
                             <ul className="sphere-list">
                                 {getTopThreeSpheres(userVector).map((sphere, index) => (
                                     <li key={index} className="sphere-item">
