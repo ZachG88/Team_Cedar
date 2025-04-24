@@ -6,7 +6,13 @@ const Nav = () => {
         <nav >
             {/* Left side links */}
             <div className="nav-links">
-            <img src="/teamCedarLogo.png" alt="Team Cedar Logo" style={{display: "block", height: "clamp(20px, 8vw, 60px)"}}/>
+            <Link to="/about#team-info">
+                <img
+                    src="/teamCedarLogo.png"
+                    alt="Team Cedar Logo"
+                    style={{ display: "block", height: "clamp(20px, 8vw, 60px)" }}
+                />
+            </Link>
                 <Link to="/" style={{ marginRight: "15px" }}>
                     <img src="/homeIconNavBar.png" alt="Home" className="nav-icon" />
                     Home
