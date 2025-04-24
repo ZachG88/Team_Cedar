@@ -10,6 +10,7 @@ import { FaArrowLeft, FaArrowRight, FaCheckCircle, FaRedoAlt } from "react-icons
 import styled from "styled-components";
 import RadarChart from "./RadarPlot";
 import careerImages from "./CareerImages.json";
+import SpheresResults from "./spheresResults";
 
 
 const SurveyContainer = styled.div`
@@ -313,7 +314,7 @@ const Survey = () => {
                                               <div className="career-card-inner">
                                                 <div className="career-card-front">
                                                   <img src={getRandomImage(career.id)} alt={career.title} />
-                                                  <h2>{career.title}</h2>
+                                                  <h2 style={{fontFamily:"Nunito, sans-serif"}}>{career.title}</h2>
                                                   <div className="tooltip-wrapper">
                                                     <span className="tooltip">Click to flip</span>
                                                   </div>
@@ -323,7 +324,7 @@ const Survey = () => {
                                                   backgroundColor: getTopSphereColor(career),
                                                   color: getTextColor(getTopSphereColor(career)),
                                                 }}>
-                                                  <h2 style={{fontSize: "2vw"}}>{career.title}</h2>
+                                                  <h2 style={{fontFamily:"Nunito, sans-serif", fontSize: "2vw"}}>{career.title}</h2>
                                                   <p>{career.duties ? truncateText(career.duties, 200) : "No description available"}...</p>
                                                   <p><strong>Skills:</strong> {career.skills ? truncateText(career.skills, 200) : "No description available"}</p>
                                                   <Link to={`/career/${career.id}`} className="learn-more">
@@ -342,15 +343,10 @@ const Survey = () => {
                         </div>
 
                         <div className="top-spheres-section">
-                            <h1>Your Top 3 Spheres of Interest</h1>
-                            <ul className="sphere-list">
-                                {getTopThreeSpheres(userVector).map((sphere, index) => (
-                                    <li key={index} className="sphere-item">
-                                        <strong>{sphere.name}</strong> 
-                                    </li>
-                                ))}
-                            </ul>
+                            <h1 style={{fontSize: "4vw"}}>Your Top 3 Spheres of Interest</h1>
+                            <SpheresResults userVector={userVector} />
                         </div>
+
                     </div>
                 
                     {/* Restart Survey Button */}

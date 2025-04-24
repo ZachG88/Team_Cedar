@@ -113,7 +113,7 @@ const Explore = () => {
               <div className="career-card-inner">
                 <div className="career-card-front">
                   <img src={getRandomImage(career.id)} alt={career.title} />
-                  <h2>{career.title}</h2>
+                  <h2 style={{fontFamily:"Nunito, sans-serif"}}>{career.title}</h2>
                   <div className="tooltip-wrapper">
                     <span className="tooltip">Click to flip</span>
                   </div>
@@ -123,7 +123,7 @@ const Explore = () => {
                   backgroundColor: getTopSphereColor(career),
                   color: getTextColor(getTopSphereColor(career)),
                 }}>
-                  <h2>{career.title}</h2>
+                  <h2 style={{fontFamily:"Nunito, sans-serif"}}>{career.title}</h2>
                   <p>{career.duties ? truncateText(career.duties, 200) : "No description available"}...</p>
                   <p><strong>Skills:</strong> {career.skills ? truncateText(career.skills, 200) : "No description available"}</p>
                   <Link to={`/career/${career.id}`} className="learn-more">

@@ -350,9 +350,11 @@ button:hover {
 /* Explore Page */
 .career-library {
   text-align: center;
-  padding: 40px;
+  padding-top: clamp(20px, 5vw,30px);
   max-width: 1200px;
   margin: auto;
+  display: block;
+  margin-top: 60px;
 }
 
 h1 {
@@ -361,26 +363,35 @@ h1 {
   color: #2c3e50;
 }
 
+.career-library h1 {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  text-align: center;
+  margin-bottom: 2vw;
+}
+
 .career-controls {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .search-bar, .filter-dropdown {
-  padding: 10px;
-  font-size: 1rem;
-  border-radius: 8px;
+  padding: clamp(5px, 2vw, 10px);
+  font-size: clamp(10px, 2vw, 20px);
+  border-radius: 1vw;
   border: 1px solid #ddd;
-  width: 250px;
+  max-width: 30vw;
 }
 
 .career-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  justify-content: center;
+  gap: 3vw;
+  padding: 20px; 
+  justify-items: center; 
+  margin: 0 auto; 
 }
 
 .career-card {
@@ -487,7 +498,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 300px;
+  width: 25vw;
   height: 35vw;
   perspective: 1000px;
   cursor: pointer; /* indicates it's clickable */
@@ -529,38 +540,6 @@ h1 {
   background-color: #f0f0f0;
   transform: rotateY(180deg);
   padding: 15px;
-}
-
-
-
-/* Spheres of Interest Visualization */
-
-.circle-container {
-  position: relative;
-  width: 250px;
-  height: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.circle {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 12px;
-  font-weight: bold;
-  transition: transform 0.2s ease-in-out;
-}
-
-.circle-text {
-  text-align: center;
-  pointer-events: none;
 }
 
 .tooltip {
@@ -652,11 +631,18 @@ h1 {
 }
 
 /* Explore page tooltip */
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
 .tooltip-wrapper {
   position: absolute;
-  top: 250px;
+  top: 200px;
   left: 50%;
   transform: translateX(-50%);
+  width: max-content;
 }
 
 .tooltip {
