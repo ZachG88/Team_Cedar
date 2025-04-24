@@ -69,7 +69,7 @@ const CareerPaths = () => {
       }}
     >
       <div style={{ flex: "1.5", marginRight: "30px", marginTop: "-22px"}}>
-        <h3 style={{ fontSize: "clamp(1rem, 3vw, 3rem)", margin: "20px 0" }}>
+        <h3 style={{ fontSize: "clamp(1rem, 3vw, 3rem)", margin: "20px 0", fontFamily: "Nunito, san-serif"}}>
           {hoveredBar ? hoveredBar.name : "Career Categories"}
         </h3>
         <p style={{ fontSize: "clamp(.5rem, 2vw, 1.5rem)", color: "#311106"}}>
@@ -86,7 +86,7 @@ const CareerPaths = () => {
               marginTop: "-5px"
             }}
           >
-            <p className="hover-text-career">
+            <p className="hover-text-career" style={{fontFamily: "Nunito, san-serif"}}>
               Hover for more info.
             </p>
           </div>
@@ -115,10 +115,10 @@ const Bar = ({ id, name, color, description, hoveredBar, setHoveredBar }) => {
       style={{
         backgroundColor: color,
         borderRadius: "7px",
-        paddingTop: "clamp(1px, 1vw, 16px)",
+        paddingTop: "clamp(1px, 1.2vw, 16px)",
         paddingRight: "clamp(1px, 2vw, 16px)",
         paddingLeft: "clamp(1px, 2vw, 16px)",
-        paddingBottom: "clamp(10px, 1.5vw, 16px)",
+        paddingBottom: "clamp(10px, 1.2vw, 16px)",
         margin: "8px",
         transition: "all 0.2s ease",
         boxShadow: isHovered ? "0 4px 8px rgba(0,0,0,0.3)" : "none",
@@ -126,7 +126,7 @@ const Bar = ({ id, name, color, description, hoveredBar, setHoveredBar }) => {
       }}
     >
       <span
-        style={{ color: "white", fontSize: "clamp(7px, 1.5vw, 20px)", fontWeight: "bold" }}
+        style={{ color: "white", fontSize: "clamp(7px, 1.7vw, 20px)", fontWeight: "bold", fontFamily: "Nunito, san-serif", textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)" }}
       >
         {name}
       </span>

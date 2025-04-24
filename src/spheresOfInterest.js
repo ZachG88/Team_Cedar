@@ -72,7 +72,7 @@ const SpheresOfInterest = () => {
       <div
         className="spheres-text-wrapper"
       >
-        <h3 style={{ fontSize: "clamp(1rem, 3vw, 3rem)" }}>
+        <h3 style={{ fontSize: "clamp(1rem, 3vw, 3rem)", fontFamily: "Nunito, san-serif" }}>
           {hoveredSphere ? hoveredSphere.name : "Spheres of Interest"}
         </h3>
         <p style={{ fontSize: "clamp(.5rem, 2vw, 1.5rem)", color: "#311106" }}>
@@ -86,7 +86,7 @@ const SpheresOfInterest = () => {
               color: "#9f90a2",
             }}
           >
-            <p className="hover-text">
+            <p className="hover-text" style={{fontFamily: "Nunito, san-serif"}}>
               Hover on the circles for more info.
             </p>
           </div>
@@ -145,7 +145,7 @@ const circleStyle = {
   alignItems: "center",
   justifyContent: "center",
   color: "white",
-  fontSize: "clamp(7px, 1.5vw, 20px)",
+  fontSize: "clamp(7px, 2vw, 20px)",
   fontWeight: "bold",
   textAlign: "center",
   cursor: "pointer",
@@ -154,6 +154,9 @@ const circleStyle = {
 
 const textStyle = {
   padding: "5px",
+  fontFamily: "Nunito, san-serif",
+  textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
+  maxWidth: "12vw"
 };
 
 export default SpheresOfInterest;
