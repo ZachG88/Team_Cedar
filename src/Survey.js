@@ -10,6 +10,7 @@ import { FaArrowLeft, FaArrowRight, FaCheckCircle, FaRedoAlt } from "react-icons
 import styled from "styled-components";
 import RadarChart from "./RadarPlot";
 import careerImages from "./CareerImages.json";
+import SpheresResults from "./spheresResults";
 
 
 const SurveyContainer = styled.div`
@@ -26,7 +27,7 @@ max-width: 100vw;
 margin: auto;
 text-align: center;
 margin-bottom: 7em;
-background-color: #edfcff;
+background-color: #ffffff;
 `;
 
 const OptionButton = styled(motion.button)`
@@ -90,6 +91,8 @@ const Survey = () => {
     const [selectedOptions, setSelectedOptions] = useState(loadSurveyData().selectedOptions);
     const [matches, setMatches] = useState(loadSurveyData().matches);
     const [currentQuestion, setCurrentQuestion] = useState(0);
+    const progressPercent = Math.round(((currentQuestion + 1) / questions.length) * 100);
+ 
 
     // Function to update user vector based on answer
     const handleAnswer = (adjustments, questionIndex, optionIndex) => {
@@ -145,6 +148,63 @@ const Survey = () => {
             .slice(0, 3); // Get top 3
     };
 
+    const [flippedCard, setFlippedCard] = useState(null);
+    
+    
+      const spheres = [
+        "Water and Fisheries",
+        "Forests, Land, and Wildlife",
+        "Government, Law, and Treaty Protection",
+        "Cultural and Tribal Resources",
+        "Data and Technology",
+      ];
+    
+      const sphereColors = {
+        "Water and Fisheries": "#8cb0bc",
+        "Forests, Land, and Wildlife": "#627943",
+        "Government, Law, and Treaty Protection": "#9f90a2",
+        "Cultural and Tribal Resources": "#acb659",
+        "Data and Technology": "#36505d",
+      };
+    
+      const getTextColor = (backgroundHex) => {
+        const hex = backgroundHex.replace("#", "");
+        const r = parseInt(hex.substring(0, 2), 16);
+        const g = parseInt(hex.substring(2, 4), 16);
+        const b = parseInt(hex.substring(4, 6), 16);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+      
+        return brightness > 150
+        ? darkenHex(backgroundHex, 100) // light background → darken text
+        : lightenHex(backgroundHex, 150); // dark background → lighten text
+      };
+    
+      const darkenHex = (hex, amount = 20) => {
+        const color = hex.replace("#", "");
+        const r = Math.max(0, parseInt(color.substring(0, 2), 16) - amount);
+        const g = Math.max(0, parseInt(color.substring(2, 4), 16) - amount);
+        const b = Math.max(0, parseInt(color.substring(4, 6), 16) - amount);
+        return `#${r.toString(16).padStart(2, "0")}${g.toString(16).padStart(2, "0")}${b.toString(16).padStart(2, "0")}`;
+      };
+    
+      const lightenHex = (hex, amount = 40) => {
+        const color = hex.replace("#", "");
+        const r = Math.min(255, parseInt(color.substring(0, 2), 16) + amount);
+        const g = Math.min(255, parseInt(color.substring(2, 4), 16) + amount);
+        const b = Math.min(255, parseInt(color.substring(4, 6), 16) + amount);
+        return `#${r.toString(16).padStart(2, "0")}${g.toString(16).padStart(2, "0")}${b.toString(16).padStart(2, "0")}`;
+      };
+
+      const truncateText = (text, maxLength) => {
+        return text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
+      };
+
+      const getTopSphereColor = (career) => {
+        const maxIndex = career.vector.indexOf(Math.max(...career.vector));
+        const topSphere = spheres[maxIndex];
+        return sphereColors[topSphere] || "#000"; // fallback to black
+      };
+
     const getRandomImage = (careerId) => {
         const index = Math.abs(careerId.split("").reduce((acc, char) => acc + char.charCodeAt(0), 0)) % careerImages.length;
         return careerImages[index]; // Assign a consistent random image based on career ID
@@ -161,12 +221,16 @@ const Survey = () => {
             {matches.length === 0 ? (
                 <SurveyContainer>
                     {/* Progress Bar */}
+                    <div className="progress-bar-wrapper">
                     <div className="progress-bar-container">
                         <div
-                            className="progress-bar"
-                            style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
+                        className="progress-bar"
+                        style={{ width: `${progressPercent}%` }}
                         ></div>
                     </div>
+                    <span className="progress-percent">{progressPercent}%</span>
+                    </div>
+
     
                     <ToastContainer />
     
@@ -231,51 +295,58 @@ const Survey = () => {
             ) : (
                 <ResultsContainer>
                     <div style={{ position: "relative", backgroundColor: "#edfcff", textAlign: "center", width: "100%" }}>
-                    <img src="/resultsBanner.png" alt="Mountains and Trees Colorful Sillouette with Results Text" className="full-width-image"/>
+                    <img src="/resultsBanner.png" alt="Mountains and Trees Colorful Sillouette with Results Text" className="full-width-image fade-in"/>
                     </div>
                     <div className="match-results">
+                    <h1 style={{fontSize: "4vw", marginTop: 0}}>Top Career Matches</h1>
                         {/* Career Matches Section */}
                         <div className="match-cards-container">
                             {matches.map((career) => (
-                                <div key={career.id} className="career-card">
-                                    <div className="career-card-inner">
-                                        {/* Front of the card */}
-                                        <div className="career-card-front">
-                                            {/* <img src={career.image || ""} alt={career.title} className="career-image" /> */}
-                                            <img src={getRandomImage(career.id)} alt={career.title} className="career-image" />
-                                            <div className="career-info">
-                                                <h3>{career.title}</h3>
+                                <div
+                                    key={career.id}
+                                    className={`career-card ${flippedCard === career.id ? "flipped" : ""}`}
+                                    onClick={() => setFlippedCard(flippedCard === career.id ? null : career.id)}
+                                    style={{
+                                    boxShadow: `0 8px 12px ${getTopSphereColor(career)}`,
+                                    transition: "box-shadow 0.3s ease",
+                                    }}
+                                >
+                                              <div className="career-card-inner">
+                                                <div className="career-card-front">
+                                                  <img src={getRandomImage(career.id)} alt={career.title} />
+                                                  <h2 style={{fontFamily:"Nunito, sans-serif"}}>{career.title}</h2>
+                                                  <div className="tooltip-wrapper">
+                                                    <span className="tooltip">Click to flip</span>
+                                                  </div>
+                                                </div>
+                                                <div className="career-card-back" 
+                                                style={{
+                                                  backgroundColor: getTopSphereColor(career),
+                                                  color: getTextColor(getTopSphereColor(career)),
+                                                }}>
+                                                  <h2 style={{fontFamily:"Nunito, sans-serif", fontSize: "2vw"}}>{career.title}</h2>
+                                                  <p>{career.duties ? truncateText(career.duties, 200) : "No description available"}...</p>
+                                                  <p><strong>Skills:</strong> {career.skills ? truncateText(career.skills, 200) : "No description available"}</p>
+                                                  <Link to={`/career/${career.id}`} className="learn-more">
+                                                    Learn More
+                                                  </Link>
+                                                </div>
+                                              </div>
                                             </div>
-                                        </div>
-                                        {/* Back of the card */}
-                                        <div className="career-card-back">
-                                            <h3>{career.title}</h3>
-                                            <p>{career.duties ? career.duties.substring(0, 380) : "No description available"}</p>
-                                            <Link to={`/career/${career.id}`} className="learn-more">
-                                                Learn More
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
                             ))}
                         </div>
     
                         {/* Radar Chart Section */}
                         <div className="interest-section">
-                            <h2>More About Your Interests</h2>
-                            <RadarChart userVector={userVector} careerMatches={matches} />
+                            <h1 style={{fontSize: "4vw"}}>More About Your Interests</h1>
+                            <RadarChart userVector={userVector} careerMatches={matches}/>
                         </div>
 
                         <div className="top-spheres-section">
-                            <h2>Your Top 3 Spheres of Interest</h2>
-                            <ul className="sphere-list">
-                                {getTopThreeSpheres(userVector).map((sphere, index) => (
-                                    <li key={index} className="sphere-item">
-                                        <strong>{sphere.name}</strong> 
-                                    </li>
-                                ))}
-                            </ul>
+                            <h1 style={{fontSize: "4vw"}}>Your Top 3 Spheres of Interest</h1>
+                            <SpheresResults userVector={userVector} />
                         </div>
+
                     </div>
                 
                     {/* Restart Survey Button */}
