@@ -14,7 +14,7 @@ const About = () => {
       </section>
 
       <section className="about-section about-sponsors">
-        <h2>About the Sponsors</h2>
+        <h2>About our Sponsors</h2>
         <p>
           This initiative is supported by organizations dedicated to Indigenous career development and conservation efforts.
         </p>
@@ -36,7 +36,7 @@ const About = () => {
           </div>
 
           {/* NWIFC Section */}
-          <div className="sponsor">
+          <div className="sponsor" style={{paddingTop: "9px"}}>
             <img src="/NWIFC-logo.png" alt="NWIFC Logo" className="sponsor-logo" />
             <div className="sponsor-info">
               <h3>Northwest Indian Fisheries Commission (NWIFC)</h3>
@@ -52,16 +52,16 @@ const About = () => {
         </div>
       </section>
 
-      <section className="about-section">
-        <h2>About the Team</h2>
-        <p>
-          We are Team Cedar! Our team consists of passionate individuals committed to environmental stewardship and Indigenous empowerment. 
-          Meet the people behind this project and their contributions.
+      <section className="about-section-team">
+        <h2>Project Built By: </h2>
+        <img src="/teamCedarLogo.png" alt="NWIFC Logo" className="sponsor-logo" />
+        <p style={{maxWidth: "55vw", margin: "0 auto" }}>
+          2025 University of Washington iSchool Informatics Capstone team and passionate individuals committed to environmental stewardship and Indigenous empowerment. 
         </p>
 
         <div className="team-container">
           {teamMembers.map((member, index) => (
-            <div className="team-member" key={index}>
+            <div className={`team-member sphere-${index % 5}`} key={index}>
               <img src={member.image} alt={member.name} className="team-photo" />
               <div className="team-info">
                 <h3>{member.name}</h3>
