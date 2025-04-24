@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import teamMembers from "./Team";
+import ScrollToHashElement from "./ScrollToHash";
 
 
 const About = () => {
@@ -52,7 +53,8 @@ const About = () => {
         </div>
       </section>
 
-      <section className="about-section-team">
+      <ScrollToHashElement />
+      <section id="team-info" className="about-section-team">
         <h2>Project Built By: </h2>
         <img src="/teamCedarLogo.png" alt="NWIFC Logo" className="sponsor-logo" />
         <p style={{maxWidth: "55vw", margin: "0 auto" }}>
