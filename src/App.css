@@ -77,7 +77,7 @@ h1 {
 .survey-button {
   background-color: #acb65a;
   color: #536639;
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-size: clamp(1rem, 2vw, 1.5rem);
   padding: clamp(10px, 3vw, 20px) clamp(20px, 5vw, 40px);
   border: none;
   border-radius: 50px;
