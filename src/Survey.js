@@ -11,6 +11,7 @@ import styled from "styled-components";
 import RadarChart from "./RadarPlot";
 import careerImages from "./CareerImages.json";
 import SpheresResults from "./spheresResults";
+import { Tooltip } from "react-tooltip";
 
 
 const SurveyContainer = styled.div`
@@ -312,12 +313,9 @@ const Survey = () => {
                                     }}
                                 >
                                               <div className="career-card-inner">
-                                                <div className="career-card-front">
+                                                <div className="career-card-front" data-tooltip-content="Click to flip" data-tooltip-id="card-tooltip" data-tooltip-place="bottom">
                                                   <img src={getRandomImage(career.id)} alt={career.title} />
                                                   <h2 style={{fontFamily:"Nunito, sans-serif"}}>{career.title}</h2>
-                                                  <div className="tooltip-wrapper">
-                                                    <span className="tooltip">Click to flip</span>
-                                                  </div>
                                                 </div>
                                                 <div className="career-card-back" 
                                                 style={{
@@ -333,8 +331,10 @@ const Survey = () => {
                                                 </div>
                                               </div>
                                             </div>
+                                            
                             ))}
                         </div>
+                        <Tooltip id="card-tooltip" className="custom-tooltip" />
     
                         {/* Radar Chart Section */}
                         <div className="interest-section">

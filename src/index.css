@@ -403,7 +403,7 @@ button:hover {
 /* Explore Page */
 .career-library {
   text-align: center;
-  padding-top: clamp(20px, 5vw,30px);
+  padding-top: clamp(5px, 5vw,30px);
   max-width: 1200px;
   margin: auto;
   display: block;
@@ -442,7 +442,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 5vw;
-  padding: 50px; 
+  padding: 20px 20px 20px 20px;
   justify-items: center; 
   margin: 0 auto; 
 }
@@ -485,7 +485,7 @@ h1 {
   align-items: center;
   perspective: 1000px;
   cursor: pointer; 
-  width: 100%;
+  width: 90%;
   height: 22vw; 
   font-size: clamp(8px, 1vw, 1.3vw);
 }
@@ -527,15 +527,12 @@ h1 {
   padding: 15px;
 }
 
-.tooltip {
-  position: absolute;
-  top: 60px;
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 10px;
-  white-space: nowrap;
+.custom-tooltip {
+  background-color: #627943!important;
+  color: white !important;
+  font-family: 'Nunito', sans-serif;
+  padding: 8px;
+  border-radius: 6px;
 }
 
 /* Top 3 Spheres */
@@ -558,7 +555,6 @@ h1 {
   color: #555;
   font-size: 16px;
 }
-
 
 /* Career Details Page */
 .career-hero-section {
@@ -628,37 +624,5 @@ h1 {
   object-fit: contain;
   border-radius: 20px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-/* Explore page tooltip */
-.tooltip-container {
-  position: relative;
-  display: inline-block;
-  text-align: center;
-}
-
-.tooltip-wrapper {
-  position: absolute;
-  top: 200px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: max-content;
-}
-
-.tooltip {
-  background-color: #333;
-  color: #fff;
-  padding: 6px 10px;
-  font-size: 0.75rem;
-  border-radius: 4px;
-  white-space: nowrap;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  pointer-events: none;
-}
-
-/* Show tooltip on hover */
-.career-card-front:hover .tooltip {
-  opacity: 1;
 }
 

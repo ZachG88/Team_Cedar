@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import careers from "./CareersEx";
 import careerImages from "./CareerImages.json";
+import { Tooltip } from 'react-tooltip';
 
 const Explore = () => {
   const [search, setSearch] = useState("");
@@ -111,12 +112,9 @@ const Explore = () => {
               }}
             >
               <div className="career-card-inner">
-                <div className="career-card-front">
+                <div className="career-card-front"  data-tooltip-content="Click to flip" data-tooltip-id="card-tooltip" data-tooltip-place="bottom">
                   <img src={getRandomImage(career.id)} alt={career.title} />
                   <h2 style={{fontFamily:"Nunito, sans-serif"}}>{career.title}</h2>
-                  <div className="tooltip-wrapper">
-                    <span className="tooltip">Click to flip</span>
-                  </div>
                 </div>
                 <div className="career-card-back" 
                 style={{
@@ -126,15 +124,17 @@ const Explore = () => {
                   <h2 style={{fontFamily:"Nunito, sans-serif"}}>{career.title}</h2>
                   <p>{career.duties ? truncateText(career.duties, 200) : "No description available"}...</p>
                   <p><strong>Skills:</strong> {career.skills ? truncateText(career.skills, 200) : "No description available"}</p>
-                  <Link to={`/career/${career.id}`} className="learn-more">
+                  <Link to={`/career/${career.id}`} className="learn-more" data-tip={career.title}>
                     Learn More
                   </Link>
                 </div>
               </div>
+              
             </div>
             
         ))}
       </div>
+      <Tooltip id="card-tooltip" className="custom-tooltip" />
     </div>
   );
 };
