@@ -441,36 +441,10 @@ h1 {
 .career-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3vw;
-  padding: 20px; 
+  gap: 5vw;
+  padding: 50px; 
   justify-items: center; 
   margin: 0 auto; 
-}
-
-.career-card {
-  background: white;
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 300px;
-  height: 400px;
-  perspective: 1000px;
-}
-
-/* .career-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
-} */
-
-.career-image {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 10px;
 }
 
 .career-info {
@@ -489,51 +463,9 @@ h1 {
   color: #555;
 }
 
-.career-link {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 12px;
-  background: #1e6091;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: background 0.3s ease;
-}
-
-.career-link:hover {
-  background: #144c73;
-}
-
-.career-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 1s;
-}
-
-
-.career-card-front, .career-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-}
-
-.career-card-front {
-  background-color: #fff;
-}
-
-.career-card-back {
-  background-color: #f0f0f0;
-  border-radius: 12px;
-  transform: rotateY(180deg);
-  padding: 15px;
-}
-
 .career-card img {
   width: 100%;
-  height: 20vw;
+  height: 15vw;
   object-fit: cover;
   border-radius: 5px;
 }
@@ -551,11 +483,11 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 25vw;
-  height: 35vw;
   perspective: 1000px;
-  cursor: pointer; /* indicates it's clickable */
-  font-size: 1vw;
+  cursor: pointer; 
+  width: 100%;
+  height: 22vw; 
+  font-size: clamp(8px, 1vw, 1.3vw);
 }
 
 /* Remove hover flip */
