@@ -179,7 +179,7 @@ button:hover {
 
 .match-results h2 {
   font-size: clamp(10px, 2vw, 60px);
-  margin-bottom: 15px;
+  margin-bottom: 0px;
 }
 
 .interest-section {
@@ -229,15 +229,14 @@ button:hover {
   background-color: #536639;
   text-decoration: none;
   color: white;
-  font-size: 1.2rem;
-  width: 70%;
+  width: 10vw;
   margin: auto;
   margin-bottom: 2em;
   border: none;
-  padding: 1vw 2vw;
+  padding: 1vw 1vw;
   border-radius: 10vw;
   transition: background-color 0.3s ease;
-  font-size: 1.5vw;
+  font-size: 1vw;
 }
 
 
@@ -403,7 +402,7 @@ button:hover {
 /* Explore Page */
 .career-library {
   text-align: center;
-  padding-top: clamp(20px, 5vw,30px);
+  padding-top: clamp(5px, 5vw,30px);
   max-width: 1200px;
   margin: auto;
   display: block;
@@ -441,36 +440,10 @@ h1 {
 .career-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3vw;
-  padding: 20px; 
+  gap: 5vw;
+  padding: 20px 20px 20px 20px;
   justify-items: center; 
   margin: 0 auto; 
-}
-
-.career-card {
-  background: white;
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 300px;
-  height: 400px;
-  perspective: 1000px;
-}
-
-/* .career-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
-} */
-
-.career-image {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 10px;
 }
 
 .career-info {
@@ -478,68 +451,11 @@ h1 {
   text-align: left;
 }
 
-.career-info h2 {
-  font-size: 1.4rem;
-  margin: 10px 0;
-  color: #1e6091;
-}
-
-.career-info p {
-  font-size: 0.9rem;
-  color: #555;
-}
-
-.career-link {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 12px;
-  background: #1e6091;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: background 0.3s ease;
-}
-
-.career-link:hover {
-  background: #144c73;
-}
-
-.career-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 1s;
-}
-
-
-.career-card-front, .career-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-}
-
-.career-card-front {
-  background-color: #fff;
-}
-
-.career-card-back {
-  background-color: #f0f0f0;
-  border-radius: 12px;
-  transform: rotateY(180deg);
-  padding: 15px;
-}
-
 .career-card img {
   width: 100%;
-  height: 20vw;
+  height: 15vw;
   object-fit: cover;
   border-radius: 5px;
-}
-
-.career-info {
-  padding: 15px;
 }
 
 /* Card flip on click (instead of hover) */
@@ -551,11 +467,11 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 25vw;
-  height: 35vw;
   perspective: 1000px;
-  cursor: pointer; /* indicates it's clickable */
-  font-size: 1vw;
+  cursor: pointer; 
+  width: 90%;
+  height: 22vw; 
+  font-size: clamp(8px, 1.3vw, 15px);
 }
 
 /* Remove hover flip */
@@ -595,15 +511,13 @@ h1 {
   padding: 15px;
 }
 
-.tooltip {
-  position: absolute;
-  top: 60px;
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 10px;
-  white-space: nowrap;
+.custom-tooltip {
+  background-color: #404f2c!important;
+  color: white !important;
+  font-family: 'Nunito', sans-serif;
+  padding: 8px;
+  border-radius: 6px;
+  opacity: 100% !important;
 }
 
 /* Top 3 Spheres */
@@ -626,7 +540,6 @@ h1 {
   color: #555;
   font-size: 16px;
 }
-
 
 /* Career Details Page */
 .career-hero-section {
@@ -696,37 +609,5 @@ h1 {
   object-fit: contain;
   border-radius: 20px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-/* Explore page tooltip */
-.tooltip-container {
-  position: relative;
-  display: inline-block;
-  text-align: center;
-}
-
-.tooltip-wrapper {
-  position: absolute;
-  top: 200px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: max-content;
-}
-
-.tooltip {
-  background-color: #333;
-  color: #fff;
-  padding: 6px 10px;
-  font-size: 0.75rem;
-  border-radius: 4px;
-  white-space: nowrap;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  pointer-events: none;
-}
-
-/* Show tooltip on hover */
-.career-card-front:hover .tooltip {
-  opacity: 1;
 }
 

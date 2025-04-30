@@ -6,16 +6,18 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "Project and people management skills",
       "education": "Generally bachelors or higher; sometimes associates+experience",
-      "vector": [0.6, 0.8, 0.9, 0.7, 0.4]
+      "vector": [0.6, 0.8, 0.9, 0.7, 0.4],
+      "categories": ["Directors and Leaders", "Policy, Planning, and Management"]
   },
   {
       "id": "habitat_manager",
-      "title": "Habitat Manager / Habitat Restoration Program Manager",
+      "title": "Habitat Restoration Program Manager",
       "duties": "Oversees habitat restoration projects managed by the tribe; write and manage grants; analyze data for reports; supervise staff",
       "image": "/CareerPics/habitat_manager.png",
       "skills": "Ability to work with others, including other tribes, and state and federal agencies; strong oral and writing skills, data analyzation",
       "education": "Bachelor's or higher",
-      "vector": [0.7, 0.9, 0.6, 0.5, 0.4]
+      "vector": [0.7, 0.9, 0.6, 0.5, 0.4],
+      "categories": ["Policy, Planning, and Management", "Conservation and Restoration"]
   },
   {
       "id": "hatchery_program_manager",
@@ -24,7 +26,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "Willingness to work nights and weekends as needed, ability to work independently; physical ability to work in various conditions including cold water",
       "education": "Associate's or Bachelor's Degree",
-      "vector": [0.9, 0.7, 0.5, 0.6, 0.4]
+      "vector": [0.9, 0.7, 0.5, 0.6, 0.4],
+      "categories": ["Policy, Planning, and Management", "Technicians and Field Support", "Conservation and Restoration"]
   },
   {
       "id": "shellfish_program_manager",
@@ -33,7 +36,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "Duties of the Shellfish Program Manager will involve participation in the development of annual species-specific management plans with the State of Washington, and in the construction and negotiation of intertribal sharing agreements.",
       "education": "Bachelor's or Master's degree",
-      "vector": [0.8, 0.6, 0.7, 0.5, 0.3]
+      "vector": [0.8, 0.6, 0.7, 0.5, 0.3],
+      "categories": ["Policy, Planning, and Management", "Scientific and Technical Specialists", "Conservation and Restoration"],
   },
   {
       "id": "environmental_planning_manager",
@@ -42,7 +46,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.7, 0.8, 0.9, 0.6, 0.6]
+      "vector": [0.7, 0.8, 0.9, 0.6, 0.6],
+      "categories": ["Policy, Planning, and Management", "Scientific and Technical Specialists"]
   },
   {
       "id": "fisheries_manager",
@@ -51,7 +56,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.9, 0.7, 0.6, 0.5, 0.4]
+      "vector": [0.9, 0.7, 0.6, 0.5, 0.4],
+      "categories": ["Scientific and Technical Specialists", "Policy, Planning, and Management"]
   },
   {
       "id": "wildlife_manager",
@@ -60,7 +66,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "Working knowledge of Microsoft Office, ArcGIS and statistical software. Experience with capturing and marking game animals. Experience with radio telemetry.",
       "education": "Bachelor's or Master's degree",
-      "vector": [0.6, 0.9, 0.7, 0.5, 0.3]
+      "vector": [0.6, 0.9, 0.7, 0.5, 0.3],
+      "categories": ["Scientific and Technical Specialists", "Conservation and Restoration", "Policy, Planning, and Management"],
   },
   {
       "id": "forestry_manager",
@@ -69,7 +76,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.5, 0.9, 0.8, 0.6, 0.4]
+      "vector": [0.5, 0.9, 0.8, 0.6, 0.4],
+      "categories": ["Scientific and Technical Specialists", "Conservation and Restoration", "Policy, Planning, and Management"],
   },
   {
       "id": "policy_advisor",
@@ -78,7 +86,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.4, 0.6, 0.9, 0.7, 0.5]
+      "vector": [0.4, 0.6, 0.9, 0.7, 0.5],
+      "categories": ["Policy, Planning, and Management", "Enforcement and Advocacy"],
   },
   {
       "id": "enhancement_manager",
@@ -87,16 +96,18 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.7, 0.8, 0.6, 0.5, 0.4]
+      "vector": [0.7, 0.8, 0.6, 0.5, 0.4],
+      "categories": ["Scientific and Technical Specialists", "Conservation and Restoration", "Policy, Planning, and Management"],
   },
   {
       "id": "watershed_and_land_use_team_leader",
-      "title": "Watershed and Land Use team leader",
+      "title": "Watershed and Land Use Team Leader",
       "duties": "",
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.8, 0.9, 0.6, 0.5, 0.4]
+      "vector": [0.8, 0.9, 0.6, 0.5, 0.4],
+      "categories": ["Directors and Leaders", "Scientific and Technical Specialists", "Conservation and Restoration"],
   },
   {
       "id": "shellfish_farm_manager",
@@ -105,7 +116,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.9, 0.6, 0.7, 0.5, 0.3]
+      "vector": [0.9, 0.6, 0.7, 0.5, 0.3],
+      "categories": ["Scientific and Technical Specialists", "Conservation and Restoration", "Policy, Planning, and Management"],
   },
   {
       "id": "water_quality_manager",
@@ -114,7 +126,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.9, 0.7, 0.6, 0.5, 0.4]
+      "vector": [0.9, 0.7, 0.6, 0.5, 0.4],
+      "categories": ["Scientific and Technical Specialists", "Conservation and Restoration", "Policy, Planning, and Management"],
   },
   {
       "id": "shellfish_biologist",
@@ -123,7 +136,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "Able to solve problems as they arise in the field, be able to identify species of interest to the study or survey for which the field work is taking place. Be a team worker and able to work independently when needed. PADI open water SCUBA diving certification required. Experience collecting scientific data while SCUBA diving an asset. Working knowledge of ArcGIS an asset.",
       "education": "Bachelor's or Master's; PADI/SCUBA certification",
-      "vector": [0.8, 0.6, 0.7, 0.5, 0.4]
+      "vector": [0.8, 0.6, 0.7, 0.5, 0.4],
+      "categories": ["Scientific and Technical Specialists", "Technicians and Field Support", "Conservation and Restoration"],
   },
   {
       "id": "environmental_biologist",
@@ -132,7 +146,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.7, 0.8, 0.6, 0.5, 0.4]
+      "vector": [0.7, 0.8, 0.6, 0.5, 0.4],
+      "categories": ["Scientific and Technical Specialists", "Conservation and Restoration", "Technicians and Field Support"],
   },
   {
       "id": "fisheries_finfish_salmon_biologist",
@@ -141,7 +156,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "Knowledge of current NW salmon stock management practices, understanding of tribal fishery management issues; demonstrated knowledge of riverine fisheries biology or hydrology with experience in salmon and steelhead stocks.",
       "education": "Bachelor's",
-      "vector": [0.9, 0.7, 0.5, 0.6, 0.4]
+      "vector": [0.9, 0.7, 0.5, 0.6, 0.4],
+      "categories": ["Scientific and Technical Specialists", "Conservation and Restoration", "Policy, Planning, and Management"],
   },
   {
       "id": "forest_and_fish_biologist",
@@ -150,7 +166,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.7, 0.9, 0.6, 0.5, 0.4]
+      "vector": [0.7, 0.9, 0.6, 0.5, 0.4],
+      "categories": ["Scientific and Technical Specialists", "Conservation and Restoration", "Policy, Planning, and Management"],
   },
   {
       "id": "restoration_planner",
@@ -159,7 +176,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.8, 0.9, 0.6, 0.5, 0.3]
+      "vector": [0.8, 0.9, 0.6, 0.5, 0.3],
+      "categories": ["Scientific and Technical Specialists", "Conservation and Restoration", "Policy, Planning, and Management"],
   },
   {
       "id": "watershed_planner_scientist",
@@ -169,6 +187,7 @@ const careers = [
       "skills": "",
       "education": "",
       "vector": [0.8, 0.9, 0.6, 0.5, 0.4],
+      "categories": ["Scientific and Technical Specialists", "Conservation and Restoration", "Policy, Planning, and Management"],
   },
   {
       "id": "restoration_ecologist",
@@ -177,7 +196,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "Experience working in natural resources management, fisheries science, environmental engineering; project management skills for complex habitat projects; writing proposals/managing grants; understanding compliance with environmental permits.",
       "education": "Master's or Bachelor's",
-      "vector": [0.7, 0.9, 0.6, 0.5, 0.4]
+      "vector": [0.7, 0.9, 0.6, 0.5, 0.4],
+      "categories": ["Scientific and Technical Specialists", "Conservation and Restoration", "Policy, Planning, and Management"],
   },
   {
       "id": "climate_change_analyst",
@@ -186,7 +206,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "Experience working with Geographic Information Systems and managing and developing large databases is required. A working familiarity with climate change models, data and current literature is a plus.",
       "education": "Master's or Bachelor's",
-      "vector": [0.6, 0.7, 0.8, 0.5, 0.7]
+      "vector": [0.6, 0.7, 0.8, 0.5, 0.7],
+      "categories": ["Scientific and Technical Specialists", "Conservation and Restoration"],
   },
   {
       "id": "project_biologist",
@@ -195,7 +216,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "Ability to take initiative and work independently while maintaining a teamwork attitude and effort",
       "education": "",
-      "vector": [0.7, 0.8, 0.6, 0.5, 0.4]
+      "vector": [0.7, 0.8, 0.6, 0.5, 0.4],
+      "categories": ["Scientific and Technical Specialists", "Conservation and Restoration", "Policy, Planning, and Management"],
   },
   {
       "id": "wildlife_biologist",
@@ -204,7 +226,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "Understanding of Endangered Species Act; principles and procedures of wildlife habitat management and biological research.",
       "education": "Bachelor's or Master's",
-      "vector": [0.6, 0.9, 0.7, 0.5, 0.3]
+      "vector": [0.6, 0.9, 0.7, 0.5, 0.3],
+      "categories": ["Scientific and Technical Specialists", "Conservation and Restoration", "Policy, Planning, and Management"],
   },
   {
       "id": "natural_resources_biologist",
@@ -213,7 +236,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.7, 0.8, 0.7, 0.5, 0.4]
+      "vector": [0.7, 0.8, 0.7, 0.5, 0.4],
+      "categories": ["Scientific and Technical Specialists", "Conservation and Restoration", "Policy, Planning, and Management"],
   },
   {
       "id": "environmental_fisheries_policy_analyst",
@@ -222,7 +246,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.6, 0.7, 0.9, 0.6, 0.5]
+      "vector": [0.6, 0.7, 0.9, 0.6, 0.5],
+      "categories": ["Policy, Planning, and Management", "Enforcement and Advocacy", "Scientific and Technical Specialists"]
   },
   {
       "id": "groundfish_biologist",
@@ -231,7 +256,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.8, 0.7, 0.5, 0.5, 0.4]
+      "vector": [0.8, 0.7, 0.5, 0.5, 0.4],
+      "categories": ["Scientific and Technical Specialists", "Conservation and Restoration", "Policy, Planning, and Management"],
   },
   {
       "id": "harvest_management_biologist",
@@ -240,7 +266,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "Knowledge of Pacific Northwest salmon and steelhead, knowledge of fisheries harvest management and techniques, software and data proficiency, technical writing skills, leadership and teamwork.",
       "education": "Bachelor's Degree, Master's Degree",
-      "vector": [0.8, 0.7, 0.6, 0.5, 0.4]
+      "vector": [0.8, 0.7, 0.6, 0.5, 0.4],
+      "categories": ["Scientific and Technical Specialists", "Conservation and Restoration", "Policy, Planning, and Management"],
   },
   {
       "id": "research_scientist",
@@ -249,7 +276,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.6, 0.7, 0.6, 0.5, 0.8]
+      "vector": [0.6, 0.7, 0.6, 0.5, 0.8],
+      "categories": ["Scientific and Technical Specialists"],
   },
   {
       "id": "air_quality_specialist",
@@ -258,7 +286,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.5, 0.7, 0.8, 0.5, 0.6]
+      "vector": [0.5, 0.7, 0.8, 0.5, 0.6],
+      "categories": ["Scientific and Technical Specialists"],
   },
   {
       "id": "environmental_planner",
@@ -267,7 +296,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "Writing skills",
       "education": "Bachelor's degree, Master's degrees",
-      "vector": [0.7, 0.8, 0.9, 0.6, 0.5]
+      "vector": [0.7, 0.8, 0.9, 0.6, 0.5],
+      "categories": ["Conservation and Restoration", "Policy, Planning, and Management", "Enforcement and Advocacy"],
   },
   {
       "id": "restoration_biologist",
@@ -276,7 +306,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.7, 0.9, 0.6, 0.5, 0.4]
+      "vector": [0.7, 0.9, 0.6, 0.5, 0.4],
+      "categories": ["Scientific and Technical Specialists", "Conservation and Restoration"],
   },
   {
       "id": "salmon_recovery_biologist",
@@ -285,7 +316,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "Knowledge of Word, Excel, writing and speaking skills, familiarity with state, federal, and local land use and environmental regulations, analysis data skills, understanding of research methods and techniques.",
       "education": "Master's degree",
-      "vector": [0.9, 0.7, 0.6, 0.5, 0.4]
+      "vector": [0.9, 0.7, 0.6, 0.5, 0.4],
+      "categories": ["Scientific and Technical Specialists", "Conservation and Restoration", "Policy, Planning, and Management"],
   },
   {
       "id": "habitat_biologist",
@@ -294,7 +326,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.7, 0.9, 0.6, 0.5, 0.4]
+      "vector": [0.7, 0.9, 0.6, 0.5, 0.4],
+      "categories": ["Scientific and Technical Specialists", "Conservation and Restoration", "Policy, Planning, and Management"],
   },
   {
       "id": "timber_fish_wildlife_biologist",
@@ -303,7 +336,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.6, 0.9, 0.7, 0.5, 0.3]
+      "vector": [0.6, 0.9, 0.7, 0.5, 0.3],
+      "categories": ["Scientific and Technical Specialists", "Conservation and Restoration", "Policy, Planning, and Management"],
   },
   {
       "id": "stock_assessment_biologist",
@@ -312,7 +346,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "Working knowledge of Pacific Northwest Salmon and steelhead. Working knowledge of fisheries stock assessment techniques, experience collecting and managing fisheries data. Experience working with fishery sampling equipment including but not limited to electrofishing, screw traps, seine, fyke, and gill nets. Experience with statistical and other quantitative and/or analytical methods used to monitor and assess fisheries abundance and trends. Proficient in use of current software and data programs.",
       "education": "Bachelor's, Master's degrees",
-      "vector": [0.9, 0.7, 0.5, 0.6, 0.4]
+      "vector": [0.9, 0.7, 0.5, 0.6, 0.4],
+      "categories": ["Scientific and Technical Specialists", "Conservation and Restoration", "Policy, Planning, and Management", "Technicians and Field Support"],
   },
   {
       "id": "gis_specialist",
@@ -321,7 +356,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "Knowledge and experience with ESRI ArcGIS program is required; familiarity with other ArcGIS tools, remote sensing software, habitat modeling, writing and/or working with scripts is desired. Knowledge of GIS and GPS software and operation. Ability to manage large and small datasets for various projects. Ability to write and communicate effectively with various audiences is required. Knowledge of environmental issues, natural resource management practices, habitat classification systems, northwest salmon recovery planning and species conservation issues in western Washington is desired. Familiarity with salmon lifecycles and salmon habitat needs is also desired.",
       "education": "Bachelor's or Master's",
-      "vector": [0.5, 0.6, 0.5, 0.4, 0.9]
+      "vector": [0.5, 0.6, 0.5, 0.4, 0.9],
+      "categories": ["Scientific and Technical Specialists", "Conservation and Restoration", "Policy, Planning, and Management"],
   },
   {
       "id": "freshwater_biologist",
@@ -330,7 +366,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.8, 0.8, 0.6, 0.5, 0.3]
+      "vector": [0.8, 0.8, 0.6, 0.5, 0.3],
+      "categories": ["Scientific and Technical Specialists", "Conservation and Restoration"],
   },
   {
       "id": "wetland_specialist",
@@ -339,7 +376,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.7, 0.9, 0.6, 0.5, 0.4]
+      "vector": [0.7, 0.9, 0.6, 0.5, 0.4],
+      "categories": ["Scientific and Technical Specialists", "Technicians and Field Support"],
   },
   {
       "id": "hydrologist",
@@ -348,7 +386,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "Bachelor's, Master's degrees",
-      "vector": [0.6, 0.7, 0.8, 0.5, 0.6]
+      "vector": [0.6, 0.7, 0.8, 0.5, 0.6],
+      "categories": ["Scientific and Technical Specialists", "Technicians and Field Support", "Policy, Planning, and Management"],
   },
   {
       "id": "water_resources_specialist",
@@ -357,7 +396,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "Familiarity with hydrogeology, hydrography, aquatic resources; field experience in streams, groundwater, surface water flow; computer skills, GIS, statistical software, manage multiple projects at once, excellent oral and written communication skills; problem-solving skills; understand and can apply environmental science standards.",
       "education": "Bachelor's, Master's degrees in hydrology, watershed studies, water resources management, environmental science",
-      "vector": [0.9, 0.7, 0.6, 0.5, 0.4]
+      "vector": [0.9, 0.7, 0.6, 0.5, 0.4],
+      "categories": ["Scientific and Technical Specialists", "Technicians and Field Support", "Policy, Planning, and Management"],
   },
   {
       "id": "invasive_species_coordinator",
@@ -366,7 +406,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.7, 0.8, 0.6, 0.5, 0.3]
+      "vector": [0.7, 0.8, 0.6, 0.5, 0.3],
+      "categories": ["Scientific and Technical Specialists", "Technicians and Field Support", "Policy, Planning, and Management"],
   },
   {
       "id": "natural_resources_technician",
@@ -375,7 +416,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "Relevant experience in natural resources-related job; operate small boats; strong interpersonal, verbal and written communication skills; ability and desire to work outdoors, lift heavy items, willingness to work in suboptimal weather and at various times of the day or night; able to take initiative, work independently and balance project responsibilities.",
       "education": "High school diploma",
-      "vector": [0.6, 0.8, 0.7, 0.5, 0.4]
+      "vector": [0.6, 0.8, 0.7, 0.5, 0.4],
+      "categories": ["Technicians and Field Support"],
   },
   {
       "id": "fisheries_technician",
@@ -384,7 +426,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "Physically demanding work such as hiking, heavy lifting and carrying heavy weight, working in inclement weather conditions; ID fish and other animals; work with others well, knowledge of scientific methods and techniques for collecting data, work professionally with tribal technical staff; comfortable interacting with the public and other agency personnel.",
       "education": "Associate of Science degree",
-      "vector": [0.9, 0.7, 0.6, 0.5, 0.4]
+      "vector": [0.9, 0.7, 0.6, 0.5, 0.4],
+      "categories": ["Technicians and Field Support"],
   },
   {
       "id": "wildlife_technician",
@@ -393,7 +436,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.6, 0.9, 0.7, 0.5, 0.3]
+      "vector": [0.6, 0.9, 0.7, 0.5, 0.3],
+      "categories": ["Technicians and Field Support"],
   },
   {
       "id": "water_quality_technician",
@@ -402,7 +446,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.9, 0.7, 0.6, 0.5, 0.4]
+      "vector": [0.9, 0.7, 0.6, 0.5, 0.4],
+      "categories": ["Technicians and Field Support"],
   },
   {
       "id": "shellfish_technician",
@@ -411,7 +456,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.8, 0.6, 0.7, 0.5, 0.4]
+      "vector": [0.8, 0.6, 0.7, 0.5, 0.4],
+      "categories": ["Technicians and Field Support"],
   },
   {
       "id": "hatchery_technician",
@@ -420,7 +466,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "Ability to operate small powerboats, chainsaws, and other power tools, good physical shape, able to lift 65+ pounds. Willing to work weekends and odd hours.",
       "education": "High-school diploma",
-      "vector": [0.9, 0.7, 0.6, 0.5, 0.3]
+      "vector": [0.9, 0.7, 0.6, 0.5, 0.3],
+      "categories": ["Technicians and Field Support"],
   },
   {
       "id": "monitors_geoduck_shellfish_fishery",
@@ -429,7 +476,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "High-school diploma",
-      "vector": [0.8, 0.7, 0.6, 0.5, 0.4]
+      "vector": [0.8, 0.7, 0.6, 0.5, 0.4],
+      "categories": ["Scientific and Technical Specialists", "Technicians and Field Support", "Policy, Planning, and Management"],
   },
   {
       "id": "fish_hatchery_culturist",
@@ -438,7 +486,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "Some knowledge of fish species and gender identification, fish culture methods and techniques, math, scientific terminology and techniques, mechanical equipment repair, understanding of how hatcheries operate; ability to work odd hours and times of day due to field conditions; perform strenuous tasks; work outdoors in all weather conditions; use power tools, follow instructions; complete tasks assigned, gather and compile data; use sound judgment.",
       "education": "High school diploma",
-      "vector": [0.9, 0.7, 0.5, 0.6, 0.4]
+      "vector": [0.9, 0.7, 0.5, 0.6, 0.4],
+      "categories": ["Technicians and Field Support"],
   },
   {
       "id": "field_technicians",
@@ -447,7 +496,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.7, 0.8, 0.6, 0.5, 0.4]
+      "vector": [0.7, 0.8, 0.6, 0.5, 0.4],
+      "categories": ["Technicians and Field Support"],
   },
   {
       "id": "environmental_technician",
@@ -456,7 +506,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.7, 0.8, 0.6, 0.5, 0.5]
+      "vector": [0.7, 0.8, 0.6, 0.5, 0.5],
+      "categories": ["Technicians and Field Support"],
   },
   {
       "id": "environmental_management_specialist",
@@ -465,7 +516,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "Bachelor's degree",
-      "vector": [0.6, 0.8, 0.7, 0.5, 0.5]
+      "vector": [0.6, 0.8, 0.7, 0.5, 0.5],
+      "categories": ["Scientific and Technical Specialists", "Technicians and Field Support", "Policy, Planning, and Management"],
   },
   {
       "id": "facilities_manager",
@@ -474,7 +526,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.5, 0.6, 0.8, 0.5, 0.6]
+      "vector": [0.5, 0.6, 0.8, 0.5, 0.6],
+      "categories": ["Scientific and Technical Specialists", "Technicians and Field Support", "Policy, Planning, and Management"],
   },
   {
       "id": "field_crew_supervisor",
@@ -483,7 +536,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.7, 0.8, 0.7, 0.5, 0.4]
+      "vector": [0.7, 0.8, 0.7, 0.5, 0.4],
+      "categories": ["Technicians and Field Support", "Directors and Leaders"],
   },
   {
       "id": "natural_resources_enforcement_law_enforcement_officer",
@@ -492,7 +546,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "Ability to analyze situations quickly and objectively, exercise good judgment to determine the proper course of action.",
       "education": "Basic Law Enforcement Academy",
-      "vector": [0.4, 0.5, 0.9, 0.7, 0.3]
+      "vector": [0.4, 0.5, 0.9, 0.7, 0.3],
+      "categories": ["Enforcement and Advocacy"]
   },
   {
       "id": "education_and_outreach_coordinator",
@@ -501,7 +556,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.5, 0.6, 0.7, 0.9, 0.5]
+      "vector": [0.5, 0.6, 0.7, 0.9, 0.5],
+      "categories": ["Outreach and Administrative Support", "Policy, Planning, and Management"]
   },
   {
       "id": "tribal_historic_preservation_officer",
@@ -510,7 +566,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.5, 0.6, 0.9, 0.8, 0.4]
+      "vector": [0.5, 0.6, 0.9, 0.8, 0.4],
+      "categories": ["Outreach and Administrative Support", "Policy, Planning, and Management"]
   },
   {
       "id": "anthropologist",
@@ -519,7 +576,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.4, 0.6, 0.8, 0.9, 0.5]
+      "vector": [0.4, 0.6, 0.8, 0.9, 0.5],
+      "categories": ["Scientific and Technical Specialists", "Policy, Planning, and Management"]
   },
   {
       "id": "archaeologist",
@@ -528,7 +586,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.4, 0.5, 0.8, 0.9, 0.5]
+      "vector": [0.4, 0.5, 0.8, 0.9, 0.5],
+      "categories": ["Scientific and Technical Specialists", "Technicians and Field Support", "Policy, Planning, and Management"]
   },
   {
       "id": "wildlife_and_cultural_resources_director",
@@ -537,16 +596,18 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.6, 0.8, 0.9, 0.9, 0.4]
+      "vector": [0.6, 0.8, 0.9, 0.9, 0.4],
+      "categories": ["Directors and Leaders", "Policy, Planning, and Management", "Conservation and Restoration"]
   },
   {
       "id": "community_outreach_volunteer_coordinator",
-      "title": "Community Outreach/Volunteer Coordinator",
+      "title": "Community Outreach / Volunteer Coordinator",
       "duties": "",
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.5, 0.6, 0.7, 0.9, 0.5]
+      "vector": [0.5, 0.6, 0.7, 0.9, 0.5],
+      "categories": ["Outreach and Administrative Support", "Policy, Planning, and Management"]
   },
   {
       "id": "natural_resources_attorney",
@@ -555,7 +616,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.3, 0.4, 0.9, 0.8, 0.4]
+      "vector": [0.3, 0.4, 0.9, 0.8, 0.4],
+      "categories": ["Enforcement and Advocacy", "Scientific and Technical Specialists", "Policy, Planning, and Management"]
   },
   {
       "id": "administrative_support",
@@ -564,7 +626,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "",
       "education": "",
-      "vector": [0.3, 0.4, 0.5, 0.6, 0.7]
+      "vector": [0.3, 0.4, 0.5, 0.6, 0.7],
+      "categories": ["Outreach and Administrative Support", "Policy, Planning, and Management"],
   },
   {
       "id": "archivist",
@@ -573,7 +636,8 @@ const careers = [
       "image": "/CareerPics/habitat_manager.png",
       "skills": "Experience in organizing large amounts of material in logical and accessible order. Knowledge of information technologies in an archival environment, including database management, records management, and creating digital libraries. Organized self-starter and creative problem solver with the ability to work collaboratively in a team environment. Demonstrated ability to communicate effectively, both verbally and in writing.",
       "education": "Bachelor's",
-      "vector": [0.2, 0.3, 0.6, 0.8, 0.7]
+      "vector": [0.2, 0.3, 0.6, 0.8, 0.7],
+      "categories": ["Scientific and Technical Specialists", "Outreach and Administrative Support", "Policy, Planning, and Management"],
   }
 ];
 
