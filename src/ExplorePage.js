@@ -142,7 +142,9 @@ const Explore = () => {
             
         ))}
       </div>
+      <Tooltip id="card-tooltip" className="custom-tooltip" />
     </div>
+    
   );
 };
 
