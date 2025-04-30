@@ -4,10 +4,12 @@ import React, { useState } from "react";
 import careers from "./CareersEx";
 import careerImages from "./CareerImages.json";
 import { Tooltip } from 'react-tooltip';
+import TagList from "./TagList";
 
 const Explore = () => {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("");
+  const [categoryFilter, setCategoryFilter] = useState("");
   const [flippedCard, setFlippedCard] = useState(null);
 
 
@@ -60,13 +62,14 @@ const Explore = () => {
   };
 
   const filteredCareers = careers.filter((career) => {
-    const maxIndex = career.vector.indexOf(Math.max(...career.vector)); // Find highest value index in vector
-    return (
-      career.title.toLowerCase().includes(search.toLowerCase()) &&
-      (filter ? maxIndex === spheres.indexOf(filter) : true) // Match selected sphere
-    );
+    const maxIndex = career.vector.indexOf(Math.max(...career.vector));
+    const matchesSearch = career.title.toLowerCase().includes(search.toLowerCase());
+    const matchesSphere = filter ? maxIndex === spheres.indexOf(filter) : true;
+    const matchesCategory = categoryFilter ? career.categories.includes(categoryFilter) : true;
+  
+    return matchesSearch && matchesSphere && matchesCategory;
   });
-
+  
   const getTopSphereColor = (career) => {
     const maxIndex = career.vector.indexOf(Math.max(...career.vector));
     const topSphere = spheres[maxIndex];
@@ -97,6 +100,12 @@ const Explore = () => {
                 <option key={index} value={sphere}>{sphere}</option>
             ))}
         </select>
+        <select onChange={(e) => setCategoryFilter(e.target.value)} className="filter-dropdown">
+          <option value="">All Categories</option>
+          {[...new Set(careers.flatMap(c => c.categories))].map((cat, index) => (
+            <option key={index} value={cat}>{cat}</option>
+          ))}
+        </select>
       </div>
 
       {/* Career Grid */}
@@ -121,9 +130,8 @@ const Explore = () => {
                   backgroundColor: getTopSphereColor(career),
                   color: getTextColor(getTopSphereColor(career)),
                 }}>
-                  <h2 style={{fontFamily:"Nunito, sans-serif"}}>{career.title}</h2>
+                  <h2 style={{fontFamily:"Nunito, sans-serif", marginBottom: "0.5vw"}}>{career.title}</h2>
                   <p>{career.duties ? truncateText(career.duties, 200) : "No description available"}...</p>
-                  <p><strong>Skills:</strong> {career.skills ? truncateText(career.skills, 200) : "No description available"}</p>
                   <Link to={`/career/${career.id}`} className="learn-more" data-tip={career.title}>
                     Learn More
                   </Link>
@@ -134,7 +142,6 @@ const Explore = () => {
             
         ))}
       </div>
-      <Tooltip id="card-tooltip" className="custom-tooltip" />
     </div>
   );
 };

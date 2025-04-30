@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import { Link, useParams } from "react-router-dom";
 import careers from "./CareersEx";
 import careerImages from "./CareerImages.json";
+import TagList from "./TagList";
 
 const CareerDetail = () => {
   const { careerId } = useParams();
@@ -101,6 +102,7 @@ return (
   <div className="career-content">
     <div className="career-text">
       <h1 className="career-title" style={{ color: titleColor }}>{career.title}</h1>
+      <TagList categories={career.categories} />
       <p className="career-duties">{career.duties}</p>
       <h3 className="section-title">Key Skills:</h3>
       <p className="skills-list">{career.skills}</p>
