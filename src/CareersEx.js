@@ -7,7 +7,8 @@ const careers = [
       "skills": "Project and people management skills",
       "education": "Generally bachelors or higher; sometimes associates+experience",
       "vector": [0.6, 0.8, 0.9, 0.7, 0.4],
-      "categories": ["Directors and Leaders", "Policy, Planning, and Management"]
+      "categories": ["Directors and Leaders", "Policy, Planning, and Management"],
+      "image": "/CareerPics/habitat_manager.png"
   },
   {
       "id": "habitat_manager",
@@ -17,7 +18,8 @@ const careers = [
       "skills": "Ability to work with others, including other tribes, and state and federal agencies; strong oral and writing skills, data analyzation",
       "education": "Bachelor's or higher",
       "vector": [0.7, 0.9, 0.6, 0.5, 0.4],
-      "categories": ["Policy, Planning, and Management", "Conservation and Restoration"]
+      "categories": ["Policy, Planning, and Management", "Conservation and Restoration"],
+      "image": "/CareerPics/shellfish_farm_manager.png"
   },
   {
       "id": "hatchery_program_manager",

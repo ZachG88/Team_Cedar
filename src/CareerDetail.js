@@ -117,7 +117,7 @@ return (
     </div>
     <div className="career-image-container">
       <img
-        src={getRandomImage(career.id)}
+        src={career.image}
         alt={career.title}
         className="career-image-right"
       />

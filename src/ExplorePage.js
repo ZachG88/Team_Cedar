@@ -122,7 +122,7 @@ const Explore = () => {
             >
               <div className="career-card-inner">
                 <div className="career-card-front"  data-tooltip-content="Click to flip" data-tooltip-id="card-tooltip" data-tooltip-place="bottom">
-                  <img src={getRandomImage(career.id)} alt={career.title} />
+                  <img src={career.image} alt={career.title} />
                   <h2 style={{fontFamily:"Nunito, sans-serif"}}>{career.title}</h2>
                 </div>
                 <div className="career-card-back" 
