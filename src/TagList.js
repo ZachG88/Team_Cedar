@@ -3,11 +3,7 @@ import { Link } from "react-router-dom";
 import { categoryColors } from "./CategoryColors";
 import { Tooltip } from "react-tooltip";
 
-<<<<<<< HEAD
 const TagList = ({ categories = [], color }) => {
-=======
-const TagList = ({ categories = [] }) => {
->>>>>>> 98cf03ca0d7655b820121598b85351fa07cf5795
   return (
     <div
       style={{
@@ -26,11 +22,7 @@ const TagList = ({ categories = [] }) => {
         >
           <span
             style={{
-<<<<<<< HEAD
               backgroundColor: color || "#ccc",
-=======
-              backgroundColor: categoryColors[category] || "#ccc",
->>>>>>> 98cf03ca0d7655b820121598b85351fa07cf5795
               color: "white",
               padding: "0.2rem 0.4rem",
               borderRadius: "8px",
@@ -40,10 +32,7 @@ const TagList = ({ categories = [] }) => {
               whiteSpace: "nowrap",
               boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
               cursor: "pointer",
-<<<<<<< HEAD
               textShadow: "0 4px 8px rgba(0,0,0,0.2)"
-=======
->>>>>>> 98cf03ca0d7655b820121598b85351fa07cf5795
             }}
           >
             {category}

@@ -1,10 +1,6 @@
 const teamMembers = [
     {
-<<<<<<< HEAD
       name: "Pournami Varma | Product Manager",
-=======
-      name: "Pournami Varma | Project Manager",
->>>>>>> 98cf03ca0d7655b820121598b85351fa07cf5795
       image: "/pournami.png",
       blurb: "Pournami is a senior in Informatics studying Data Science and Human-Computer Interaction. She is from the PNW and enjoys dancing, binging her comfort tv shows and capturing moments in videos."
     },
@@ -14,11 +10,7 @@ const teamMembers = [
       blurb: "Adora is a current senior studying Informatics. She is from the PNW and enjoys trying new restaurants, catching the sunset, and going to SoulCycle in her free time."
     },
     {
-<<<<<<< HEAD
       name: "Nandita Raman | Project Manager",
-=======
-      name: "Nandita Raman | Product Manager",
->>>>>>> 98cf03ca0d7655b820121598b85351fa07cf5795
       image: "/nandita.png",
       blurb: "Nandita is a senior in Informatics, interested in technology law. She is from the PNW and enjoys reading, lifting weights, and rewatching her favorite TV shows. "
     },
