@@ -11,6 +11,7 @@ import styled from "styled-components";
 import RadarChart from "./RadarPlot";
 import careerImages from "./CareerImages.json";
 import SpheresResults from "./spheresResults";
+import CategoryResults from "./categoryResults";
 import { Tooltip } from "react-tooltip";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
@@ -420,6 +421,11 @@ const Survey = () => {
                             <SpheresResults userVector={userVector} />
                         </div>
 
+                        <div className="top-categories-section">
+                            <h1 style={{fontSize: "4vw"}}>Your Top Career Categories</h1>
+                            <CategoryResults topCareerMatches={matches} />
+                        </div>
+
                     </div>
                 
                     {/* Restart Survey Button */}
@@ -428,8 +434,15 @@ const Survey = () => {
                         Restart Survey
                     </ResetButton>
                     <div style={{ textAlign: "center", marginTop: "2rem" }}>
-        <button onClick={handleDownloadPDF}>Download Results as PDF</button>
-      </div>
+                        <button onClick={handleDownloadPDF} style={{
+                            backgroundColor: '#536639',
+                            color: 'white',
+                            padding: '10px 20px',
+                            border: 'none',
+                            borderRadius: '8px',
+                            cursor: 'pointer',
+                        }}>Download Results as PDF</button>
+                    </div>
                 </ResultsContainer>
             )}
         </>
