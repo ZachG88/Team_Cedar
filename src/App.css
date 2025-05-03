@@ -1,0 +1,162 @@
+.App {
+  text-align: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap');
+
+h1 {
+  font-family: 'Nunito', sans-serif;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.full-width-image {
+  width: 100vw; 
+  display: block;
+  padding-top: 6rem;
+  image-rendering: auto;
+}
+
+.footer-image {
+  width: 100vw; 
+  display: block;
+  padding-top: 2rem;
+  image-rendering: auto;
+  overflow: hidden;
+}
+
+
+.about-image {
+  width: clamp(0px, 50vw, 600px);
+  height: auto;
+  border-radius: 10px;
+}
+
+.learn-more-button {
+  background-color: #465b29;
+  color: white;
+  font-size: clamp(.5rem, 2vw, 1.5rem);
+  padding: clamp(5px, 2vw, 20px) clamp(20px, 5vw, 40px);
+  border: none;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+}
+
+.learn-more-button:hover {
+  background-color: #63754a; 
+}
+
+.survey-button {
+  background-color: #acb65a;
+  color: #536639;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  padding: clamp(10px, 3vw, 20px) clamp(20px, 5vw, 40px);
+  border: none;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+}
+
+.survey-button:hover {
+  background-color: #edfcff; 
+}
+
+.spheres-wrapper {
+  position: absolute;
+  overflow: hidden;
+}
+
+.spheres-text-wrapper {
+  flex: 1;
+  text-align: left;
+  margin-top: 4vh;
+  max-width: 80vw;
+}
+
+.hover-text {
+  padding-bottom: clamp(50px, 6vw, 100px);
+  font-size: clamp(.8rem, 2.2vw, 2rem);
+  text-align: left;
+}
+
+@media (max-width: 800px) {
+  .hover-text {
+    padding-bottom: clamp(50px, 6vw, 100px);
+    font-size: clamp(.8rem, 2.2vw, 2rem);
+    text-align: left;
+  }
+}
+
+.hover-text-career {
+  font-size: clamp(.8rem, 2.2vw, 3rem);
+}
+
+@media (max-width: 800px) {
+  .hover-text-career {
+    font-size: clamp(.8rem, 2.2vw, 2rem);
+  }
+}
+
+.call-to-action {
+  text-align: center;
+  padding-top: 15px;
+  margin-top: -5px;
+  padding-bottom: 50px;
+  background-color: #536639;
+  overflow: hidden;
+}
+
+.call-to-action h2 {
+  color: white;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-top: 0;
+}
+
+.find-your-path-section {
+  background-color: #edfcff;
+}
+
+.page‑wrapper {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.category-icon {
+  width: clamp(0.75rem, 2.5vw, 20px);
+  height: clamp(0.75rem, 2.5vw, 20px);
+  margin-right: clamp(0.25rem, 1vw, 8px);
+}
+
+@media (max-width: 768px) {
+  .category-icon {
+    display: none;
+  }
+}
