@@ -147,6 +147,7 @@ h1 {
   height: 100vh;
   overflow: hidden;
   position: relative;
+<<<<<<< HEAD
 }
 
 .category-icon {
@@ -159,4 +160,6 @@ h1 {
   .category-icon {
     display: none;
   }
+=======
+>>>>>>> 98cf03ca0d7655b820121598b85351fa07cf5795
 }

@@ -12,8 +12,11 @@
     "chart.js": "^4.4.8",
     "firebase": "^11.3.1",
     "framer-motion": "^12.5.0",
+<<<<<<< HEAD
     "html2canvas": "^1.4.1",
     "jspdf": "^3.0.1",
+=======
+>>>>>>> 98cf03ca0d7655b820121598b85351fa07cf5795
     "react": "^19.0.0",
     "react-chartjs-2": "^5.3.0",
     "react-dom": "^19.0.0",

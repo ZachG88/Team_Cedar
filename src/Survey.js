@@ -2,7 +2,11 @@ import { findBestCareers } from "./MatchCareers";
 import { Link } from "react-router-dom";
 import questions from "./Questions";
 
+<<<<<<< HEAD
 import { useState, useEffect, useRef } from "react";
+=======
+import { useState, useEffect } from "react";
+>>>>>>> 98cf03ca0d7655b820121598b85351fa07cf5795
 import { motion } from "framer-motion";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -12,8 +16,11 @@ import RadarChart from "./RadarPlot";
 import careerImages from "./CareerImages.json";
 import SpheresResults from "./spheresResults";
 import { Tooltip } from "react-tooltip";
+<<<<<<< HEAD
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+=======
+>>>>>>> 98cf03ca0d7655b820121598b85351fa07cf5795
 
 
 const SurveyContainer = styled.div`
@@ -219,6 +226,7 @@ const Survey = () => {
         localStorage.setItem("selectedOptions", JSON.stringify(selectedOptions));
     }, [userVector, selectedOptions]);
 
+<<<<<<< HEAD
     const resultsRef = useRef();
 
     const handleDownloadPDF = async () => {
@@ -281,6 +289,8 @@ const Survey = () => {
     pdf.save("myCareerResults.pdf");
     };
 
+=======
+>>>>>>> 98cf03ca0d7655b820121598b85351fa07cf5795
     return (
         <>
             {matches.length === 0 ? (
@@ -358,6 +368,7 @@ const Survey = () => {
                     </Navigation>
                 </SurveyContainer>
             ) : (
+<<<<<<< HEAD
                 <ResultsContainer ref={resultsRef}>
                     <div className="banner-wrapper" style={{
                         position: "relative",
@@ -370,6 +381,11 @@ const Survey = () => {
                         alt="Mountains and Trees…"
                         className="full-width-image fade-in"
                         />
+=======
+                <ResultsContainer>
+                    <div style={{ position: "relative", backgroundColor: "#edfcff", textAlign: "center", width: "100%" }}>
+                    <img src="/resultsBanner.png" alt="Mountains and Trees Colorful Sillouette with Results Text" className="full-width-image fade-in"/>
+>>>>>>> 98cf03ca0d7655b820121598b85351fa07cf5795
                     </div>
                     <div className="match-results">
                     <h1 style={{fontSize: "4vw", marginTop: 0}}>Top Career Matches</h1>
@@ -427,9 +443,12 @@ const Survey = () => {
                         <FaRedoAlt style={{ marginRight: "5px" }} />
                         Restart Survey
                     </ResetButton>
+<<<<<<< HEAD
                     <div style={{ textAlign: "center", marginTop: "2rem" }}>
         <button onClick={handleDownloadPDF}>Download Results as PDF</button>
       </div>
+=======
+>>>>>>> 98cf03ca0d7655b820121598b85351fa07cf5795
                 </ResultsContainer>
             )}
         </>
