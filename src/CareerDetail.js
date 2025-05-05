@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { Link, useParams } from "react-router-dom";
-import careers from "./CareersEx";
+import careers from "./CareersEx_2";
 import careerImages from "./CareerImages.json";
 import TagList from "./TagList";
 

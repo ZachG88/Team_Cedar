@@ -1,7 +1,7 @@
 // Resources Page
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
-import careers from "./CareersEx";
+import careers from "./CareersEx_2";
 import careerImages from "./CareerImages.json";
 import { Tooltip } from 'react-tooltip';
 import TagList from "./TagList";

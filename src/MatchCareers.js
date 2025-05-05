@@ -1,5 +1,5 @@
 import careerVectors from "./careerVectors";
-import careers from "./CareersEx";
+import careers from "./CareersEx_2";
 
 const dotProduct = (vecA, vecB) => vecA.reduce((sum, a, i) => sum + a * vecB[i], 0);
 
