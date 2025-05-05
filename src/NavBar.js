@@ -25,6 +25,10 @@ const Nav = () => {
                 <img src="/worldNavBar.png" alt="Explore" className="nav-icon" />
                     Explore
                 </Link>
+                <Link to="/resources" style={{ marginRight: "15px" }}>
+                <img src="/worldNavBar.png" alt="Explore" className="nav-icon" />
+                    Resources
+                </Link>
             </div>
 
             {/* Right-aligned external link */}
