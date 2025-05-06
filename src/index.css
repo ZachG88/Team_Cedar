@@ -624,3 +624,69 @@ h1 {
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
 }
 
+
+/* Resources Styling */
+.resources-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.resources-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.resources-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.resources-section p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.resources-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.resource-card {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  width: 280px;
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resource-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.resource-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.resource-card p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.resource-card a {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.resource-card a:hover {
+  text-decoration: underline;
+}
+
+

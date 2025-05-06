@@ -3,6 +3,7 @@ import Survey from "./Survey";
 import Nav from "./NavBar";
 import About from "./About";
 import Explore from "./ExplorePage";
+import Resources from "./Resources";
 import OurTeam from "./Team";
 import './App.css';
 import { color } from "framer-motion";
@@ -104,6 +105,7 @@ const App = () => {
         <Route path="/survey" element={<Survey />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/about" element={<About />} />
+        <Route path="/resources" element={<Resources />} />
         <Route path="/career/:careerId" element={<CareerDetail />} />
       </Routes>
     </Router>

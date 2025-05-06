@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { Link, useParams } from "react-router-dom";
-import careers from "./CareersEx";
+import careers from "./CareersEx_2";
 import careerImages from "./CareerImages.json";
 import TagList from "./TagList";
 
@@ -117,7 +117,7 @@ return (
     </div>
     <div className="career-image-container">
       <img
-        src={getRandomImage(career.id)}
+        src={career.image}
         alt={career.title}
         className="career-image-right"
       />

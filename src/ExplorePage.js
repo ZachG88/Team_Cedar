@@ -1,7 +1,7 @@
 // Resources Page
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
-import careers from "./CareersEx";
+import careers from "./CareersEx_2";
 import careerImages from "./CareerImages.json";
 import { Tooltip } from 'react-tooltip';
 import TagList from "./TagList";
@@ -122,8 +122,9 @@ const Explore = () => {
             >
               <div className="career-card-inner">
                 <div className="career-card-front"  data-tooltip-content="Click to flip" data-tooltip-id="card-tooltip" data-tooltip-place="bottom">
-                  <img src={getRandomImage(career.id)} alt={career.title} />
-                  <h2 style={{fontFamily:"Sanchez, sans-serif"}}>{career.title}</h2>
+                  <img src={career.image} alt={career.title} />
+                  <h2 style={{fontFamily:"Nunito, sans-serif"}}>{career.title}</h2>
+
                 </div>
                 <div className="career-card-back" 
                 style={{
