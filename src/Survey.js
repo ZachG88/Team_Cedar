@@ -6,7 +6,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { FaArrowLeft, FaArrowRight, FaCheckCircle, FaRedoAlt } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight, FaCheckCircle, FaRedoAlt, FaFileDownload } from "react-icons/fa";
 import styled from "styled-components";
 import RadarChart from "./RadarPlot";
 import careerImages from "./CareerImages.json";
@@ -389,14 +389,14 @@ const Survey = () => {
                                               <div className="career-card-inner">
                                                 <div className="career-card-front" data-tooltip-content="Click to flip" data-tooltip-id="card-tooltip" data-tooltip-place="bottom">
                                                   <img src={getRandomImage(career.id)} alt={career.title} />
-                                                  <h2 style={{fontFamily:"Nunito, sans-serif"}}>{career.title}</h2>
+                                                  <h2 style={{fontFamily:"Sanchez, sans-serif"}}>{career.title}</h2>
                                                 </div>
                                                 <div className="career-card-back" 
                                                 style={{
                                                   backgroundColor: getTopSphereColor(career),
                                                   color: getTextColor(getTopSphereColor(career)),
                                                 }}>
-                                                  <h2 style={{fontFamily:"Nunito, sans-serif", fontSize: "2vw"}}>{career.title}</h2>
+                                                  <h2 style={{fontFamily:"Sanchez, sans-serif", fontSize: "2vw"}}>{career.title}</h2>
                                                   <p>{career.duties ? truncateText(career.duties, 200) : "No description available"}...</p>
                                                   <p><strong>Skills:</strong> {career.skills ? truncateText(career.skills, 200) : "No description available"}</p>
                                                   <Link to={`/career/${career.id}`} className="learn-more">
@@ -429,8 +429,8 @@ const Survey = () => {
                     </div>
                 
                     {/* Restart Survey Button */}
-                    <ResetButton onClick={handleResetSurvey}>
-                        <FaRedoAlt style={{ marginRight: "5px" }} />
+                    <ResetButton onClick={handleResetSurvey} style={{fontFamily:"Sanchez, sans-serif"}}>
+                        <FaRedoAlt style={{ marginRight: "5px"}} />
                         Restart Survey
                     </ResetButton>
                     <div style={{ textAlign: "center", marginTop: "2rem" }}>
@@ -441,7 +441,10 @@ const Survey = () => {
                             border: 'none',
                             borderRadius: '8px',
                             cursor: 'pointer',
-                        }}>Download Results as PDF</button>
+                            fontFamily:"Sanchez, sans-serif"
+                        }}>
+                            <FaFileDownload style={{ marginRight: "5px", border: "none"}} />
+                            Download Results as PDF</button>
                     </div>
                 </ResultsContainer>
             )}

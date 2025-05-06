@@ -92,7 +92,7 @@ const CategoryResults = ({ topCareerMatches }) => {
             style={{
               fontSize: "clamp(1rem, 3vw, 3rem)",
               margin: "20px 0",
-              fontFamily: "Nunito, san-serif",
+              fontFamily: "Sanchez, san-serif",
             }}
           >
             {hoveredBar ? hoveredBar.name : "Learn More"}
@@ -118,14 +118,14 @@ const CategoryResults = ({ topCareerMatches }) => {
             >
               <p
                 className="hover-text-career"
-                style={{ fontFamily: "Nunito, san-serif" }}
+                style={{ fontFamily: "Sanchez, san-serif" }}
               >
                 Hover for more info.
               </p>
             </div>
           )}
         </div>
-        <div style={{ flex: "1.5" }}>
+        <div style={{ flex: "1.5", paddingTop: "3vw" }}>
           {filteredBars.map((bar) => (
             <Bar
               key={bar.id}
@@ -161,7 +161,7 @@ const Bar = ({ id, name, color, description, hoveredBar, setHoveredBar }) => {
     >
       <img src={`/CareerCategoryIcons/${name}.png`} alt={name} className="category-icon" />
       <span
-        style={{ color: "#465b29", fontSize: "clamp(7px, 1.7vw, 20px)", fontWeight: "bold", fontFamily: "Nunito, san-serif", textShadow: "2px 2px 4px rgba(0, 0, 0, 0.1)" }}
+        style={{ color: "#465b29", fontSize: "clamp(7px, 1.7vw, 20px)", fontWeight: "bold", fontFamily: "Sanchez, san-serif", textShadow: "2px 2px 4px rgba(0, 0, 0, 0.1)" }}
       >
         {name}
       </span>

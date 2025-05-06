@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gelasio&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
 body {
   margin: 0;
@@ -28,6 +30,7 @@ nav {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   top: 0;
+  font-family: 'Sanchez', sans-serif;
 }
 
 .nav-links,
@@ -261,7 +264,7 @@ button:hover {
   font-size: 4vw;
   color: #333;
   margin-bottom: 15px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Sanchez', sans-serif;
 }
 
 .about-section p {
@@ -272,7 +275,7 @@ button:hover {
 }
 
 .about-section h3 {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Sanchez', sans-serif;
   font-size: 2vw;
 }
 
@@ -330,7 +333,7 @@ button:hover {
   font-size: 4vw;
   color: #333;
   margin-bottom: 15px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Sanchez', sans-serif;
 }
 
 .about-section-team p {
@@ -366,7 +369,7 @@ button:hover {
 .team-info h3 {
   font-size: clamp(10px, 4vw, 20px);
   margin-bottom: 5px;
-  font-family: 'Nunito', san-serif;
+  font-family: 'Sanchez', san-serif;
 }
 
 .team-info p {
@@ -597,7 +600,7 @@ h1 {
 .section-title {
   font-size: clamp(10px, 2vw, 50px);
   margin-top: 20px;
-  font-family: 'Nunito', san-serif;
+  font-family: 'Sanchez', san-serif;
 }
 
 .skills-list, .education-info, .career-duties {

@@ -69,7 +69,7 @@ const CareerPaths = () => {
       }}
     >
       <div style={{ flex: "1.5", marginRight: "30px", marginTop: "-22px"}}>
-        <h3 style={{ fontSize: "clamp(1rem, 3vw, 3rem)", margin: "20px 0", fontFamily: "Nunito, san-serif"}}>
+        <h3 style={{ fontSize: "clamp(1rem, 3vw, 3rem)", margin: "20px 0", fontFamily: "Sanchez, san-serif"}}>
           {hoveredBar ? hoveredBar.name : "Career Categories"}
         </h3>
         <p style={{ fontSize: "clamp(.5rem, 2vw, 1.5rem)", color: "#311106"}}>
@@ -86,8 +86,8 @@ const CareerPaths = () => {
               marginTop: "-5px"
             }}
           >
-            <p className="hover-text-career" style={{fontFamily: "Nunito, san-serif"}}>
-              Hover for more info.
+            <p className="hover-text-career" style={{fontFamily: "Sanchez, san-serif"}}>
+              Hover over the bars for more info.
             </p>
           </div>
         )}
@@ -127,7 +127,7 @@ const Bar = ({ id, name, color, description, hoveredBar, setHoveredBar }) => {
     >
       <img src={`/CareerCategoryIcons/${name}.png`} alt={name} className="category-icon" />
       <span
-        style={{ color: "#465b29", fontSize: "clamp(7px, 1.7vw, 20px)", fontWeight: "bold", fontFamily: "Nunito, san-serif", textShadow: "2px 2px 4px rgba(0, 0, 0, 0.1)" }}
+        style={{ color: "#465b29", fontSize: "clamp(7px, 1.7vw, 20px)", fontWeight: "bold", fontFamily: "Sanchez, san-serif", textShadow: "2px 2px 4px rgba(0, 0, 0, 0.1)" }}
       >
         {name}
       </span>

@@ -76,7 +76,7 @@ const SpheresResults = ({ userVector }) => {
         </div>
      
       <div className="spheres-text-wrapper">
-        <h3 style={{ fontSize: "clamp(1rem, 3vw, 3rem)", fontFamily: "Nunito, san-serif" }}>
+        <h3 style={{ fontSize: "clamp(1rem, 3vw, 3rem)", fontFamily: "Sanchez, san-serif" }}>
           {hoveredSphere ? hoveredSphere.name : "Learn More"}
         </h3>
         <p style={{ fontSize: "clamp(.5rem, 2vw, 1.5rem)", color: "#311106" }}>
@@ -86,7 +86,7 @@ const SpheresResults = ({ userVector }) => {
         </p>
         {!hoveredSphere && (
           <div style={{ color: "#9f90a2" }}>
-            <p className="hover-text" style={{fontFamily: "Nunito, san-serif"}}>Hover on the circles for more info.</p>
+            <p className="hover-text" style={{fontFamily: "Sanchez, san-serif"}}>Hover on the circles for more info.</p>
           </div>
         )}
       </div>
@@ -152,7 +152,7 @@ const circleStyle = {
 
 const textStyle = {
   padding: "5px",
-  fontFamily: "Nunito, san-serif",
+  fontFamily: "Sanchez, san-serif",
   textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
   maxWidth: "12vw"
 };
