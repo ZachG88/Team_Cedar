@@ -83,7 +83,7 @@ const Explore = () => {
     
   return (
     <div className="career-library">
-      <h1 style={{paddingTop: "3vw", fontSize: "4vw"}}>Explore Conservation Careers</h1>
+      <h1 style={{fontSize: "4vw"}}>Explore Conservation Careers</h1>
       
       {/* Search & Filter Controls */}
       <div className="career-controls">
@@ -123,7 +123,7 @@ const Explore = () => {
               <div className="career-card-inner">
                 <div className="career-card-front"  data-tooltip-content="Click to flip" data-tooltip-id="card-tooltip" data-tooltip-place="bottom">
                   <img src={career.image} alt={career.title} />
-                  <h2 style={{fontFamily:"Nunito, sans-serif"}}>{career.title}</h2>
+                  <h2 style={{fontFamily:"Sanchez, sans-serif"}}>{career.title}</h2>
 
                 </div>
                 <div className="career-card-back" 

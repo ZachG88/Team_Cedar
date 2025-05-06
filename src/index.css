@@ -67,6 +67,12 @@ nav a {
   z-index: 1000;
 }
 
+@media (max-width: 768px) {
+  nav a{
+    font-size: clamp(6px, 1vw, 16px);
+  }
+}
+
 a:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease-in-out;
@@ -517,7 +523,7 @@ h1 {
 .custom-tooltip {
   background-color: #404f2c!important;
   color: white !important;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Sanchez', sans-serif;
   padding: 8px;
   border-radius: 6px;
   opacity: 100% !important;
