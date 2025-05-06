@@ -46,7 +46,7 @@ const CareerDetail = () => {
     function getTitleColor(topSphere) {
       switch (topSphere) {
         case "Forests, Land, and Wildlife":
-          return "#d0f3a2";
+          return "#a5c779";
         case "Government, Law, and Treaty Protection":
           return "#372b39";
         case "Cultural and Tribal Resources":
@@ -54,7 +54,7 @@ const CareerDetail = () => {
         case "Water and Fisheries":
           return "#324045";
         case "Data and Technology":
-          return "#b6cfdb";
+          return "#a2bdca";
         default:
           return "white";
       }
@@ -102,7 +102,7 @@ return (
   <div className="career-content">
     <div className="career-text">
       <h1 className="career-title" style={{ color: titleColor }}>{career.title}</h1>
-      <TagList categories={career.categories} />
+      <TagList categories={career.categories} color={titleColor}/>
       <p className="career-duties">{career.duties}</p>
       <h3 className="section-title">Key Skills:</h3>
       <p className="skills-list">{career.skills}</p>

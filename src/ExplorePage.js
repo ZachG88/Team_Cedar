@@ -124,13 +124,14 @@ const Explore = () => {
                 <div className="career-card-front"  data-tooltip-content="Click to flip" data-tooltip-id="card-tooltip" data-tooltip-place="bottom">
                   <img src={career.image} alt={career.title} />
                   <h2 style={{fontFamily:"Nunito, sans-serif"}}>{career.title}</h2>
+
                 </div>
                 <div className="career-card-back" 
                 style={{
                   backgroundColor: getTopSphereColor(career),
                   color: getTextColor(getTopSphereColor(career)),
                 }}>
-                  <h2 style={{fontFamily:"Nunito, sans-serif", marginBottom: "0.5vw"}}>{career.title}</h2>
+                  <h2 style={{fontFamily:"Sanchez, sans-serif", marginBottom: "0.5vw"}}>{career.title}</h2>
                   <p>{career.duties ? truncateText(career.duties, 200) : "No description available"}...</p>
                   <Link to={`/career/${career.id}`} className="learn-more" data-tip={career.title}>
                     Learn More

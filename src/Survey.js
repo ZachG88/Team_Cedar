@@ -2,16 +2,19 @@ import { findBestCareers } from "./MatchCareers";
 import { Link } from "react-router-dom";
 import questions from "./Questions";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { FaArrowLeft, FaArrowRight, FaCheckCircle, FaRedoAlt } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight, FaCheckCircle, FaRedoAlt, FaFileDownload } from "react-icons/fa";
 import styled from "styled-components";
 import RadarChart from "./RadarPlot";
 import careerImages from "./CareerImages.json";
 import SpheresResults from "./spheresResults";
+import CategoryResults from "./categoryResults";
 import { Tooltip } from "react-tooltip";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 
 const SurveyContainer = styled.div`
@@ -217,6 +220,68 @@ const Survey = () => {
         localStorage.setItem("selectedOptions", JSON.stringify(selectedOptions));
     }, [userVector, selectedOptions]);
 
+    const resultsRef = useRef();
+
+    const handleDownloadPDF = async () => {
+        const element = resultsRef.current;
+        if (!element) return;
+      
+        const canvas = await html2canvas(element, {
+          scale: 2,
+          onclone: (clonedDoc) => {
+            clonedDoc.querySelectorAll(".career-card-inner").forEach(innerEl => {
+              innerEl.style.transform = "none";
+              const back = innerEl.querySelector(".career-card-back");
+              const front = innerEl.querySelector(".career-card-front");
+              if (back) back.style.visibility = "hidden";
+              if (front) front.style.visibility = "visible";
+            });
+        
+            const bannerImg = clonedDoc.querySelector(".banner-wrapper img.full-width-image");
+            if (bannerImg) {
+              bannerImg.classList.remove("fade-in");    // remove any animation class
+              bannerImg.style.opacity    = "1";         
+              bannerImg.style.transition = "none";      
+              bannerImg.style.filter     = "none";      
+            }
+          }
+        });
+
+    // 2) Setup jsPDF (A4 portrait in mm)
+    const pdf = new jsPDF("p", "mm", "a4");
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = pdf.internal.pageSize.getHeight();
+
+    // 3) Calculate the pixel height per page based on the A4 aspect ratio
+    const pageHeightPx = Math.floor(canvas.width * (pdfHeight / pdfWidth));
+    const totalPages = Math.ceil(canvas.height / pageHeightPx);
+
+    // 4) Slice & add each page
+    for (let page = 0; page < totalPages; page++) {
+      const srcY = page * pageHeightPx;
+      const sliceHeight = Math.min(pageHeightPx, canvas.height - srcY);
+
+      const pageCanvas = document.createElement("canvas");
+      pageCanvas.width = canvas.width;
+      pageCanvas.height = sliceHeight;
+      const ctx = pageCanvas.getContext("2d");
+      ctx.drawImage(
+        canvas,
+        0, srcY, canvas.width, sliceHeight,
+        0, 0, canvas.width, sliceHeight
+      );
+
+      const imgData = pageCanvas.toDataURL("image/png");
+      const imgHeight = (sliceHeight * pdfWidth) / canvas.width;
+
+      pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, imgHeight);
+      if (page < totalPages - 1) pdf.addPage();
+    }
+
+    // 5) Save the PDF
+    pdf.save("myCareerResults.pdf");
+    };
+
     return (
         <>
             {matches.length === 0 ? (
@@ -294,9 +359,18 @@ const Survey = () => {
                     </Navigation>
                 </SurveyContainer>
             ) : (
-                <ResultsContainer>
-                    <div style={{ position: "relative", backgroundColor: "#edfcff", textAlign: "center", width: "100%" }}>
-                    <img src="/resultsBanner.png" alt="Mountains and Trees Colorful Sillouette with Results Text" className="full-width-image fade-in"/>
+                <ResultsContainer ref={resultsRef}>
+                    <div className="banner-wrapper" style={{
+                        position: "relative",
+                        backgroundColor: "#edfcff",
+                        textAlign: "center",
+                        width: "100%"
+                    }}>
+                        <img
+                        src="/resultsBanner.png"
+                        alt="Mountains and Trees…"
+                        className="full-width-image fade-in"
+                        />
                     </div>
                     <div className="match-results">
                     <h1 style={{fontSize: "4vw", marginTop: 0}}>Top Career Matches</h1>
@@ -315,14 +389,14 @@ const Survey = () => {
                                               <div className="career-card-inner">
                                                 <div className="career-card-front" data-tooltip-content="Click to flip" data-tooltip-id="card-tooltip" data-tooltip-place="bottom">
                                                   <img src={getRandomImage(career.id)} alt={career.title} />
-                                                  <h2 style={{fontFamily:"Nunito, sans-serif"}}>{career.title}</h2>
+                                                  <h2 style={{fontFamily:"Sanchez, sans-serif"}}>{career.title}</h2>
                                                 </div>
                                                 <div className="career-card-back" 
                                                 style={{
                                                   backgroundColor: getTopSphereColor(career),
                                                   color: getTextColor(getTopSphereColor(career)),
                                                 }}>
-                                                  <h2 style={{fontFamily:"Nunito, sans-serif", fontSize: "2vw"}}>{career.title}</h2>
+                                                  <h2 style={{fontFamily:"Sanchez, sans-serif", fontSize: "2vw"}}>{career.title}</h2>
                                                   <p>{career.duties ? truncateText(career.duties, 200) : "No description available"}...</p>
                                                   <p><strong>Skills:</strong> {career.skills ? truncateText(career.skills, 200) : "No description available"}</p>
                                                   <Link to={`/career/${career.id}`} className="learn-more">
@@ -347,13 +421,31 @@ const Survey = () => {
                             <SpheresResults userVector={userVector} />
                         </div>
 
+                        <div className="top-categories-section">
+                            <h1 style={{fontSize: "4vw"}}>Your Top Career Categories</h1>
+                            <CategoryResults topCareerMatches={matches} />
+                        </div>
+
                     </div>
                 
                     {/* Restart Survey Button */}
-                    <ResetButton onClick={handleResetSurvey}>
-                        <FaRedoAlt style={{ marginRight: "5px" }} />
+                    <ResetButton onClick={handleResetSurvey} style={{fontFamily:"Sanchez, sans-serif"}}>
+                        <FaRedoAlt style={{ marginRight: "5px"}} />
                         Restart Survey
                     </ResetButton>
+                    <div style={{ textAlign: "center", marginTop: "2rem" }}>
+                        <button onClick={handleDownloadPDF} style={{
+                            backgroundColor: '#536639',
+                            color: 'white',
+                            padding: '10px 20px',
+                            border: 'none',
+                            borderRadius: '8px',
+                            cursor: 'pointer',
+                            fontFamily:"Sanchez, sans-serif"
+                        }}>
+                            <FaFileDownload style={{ marginRight: "5px", border: "none"}} />
+                            Download Results as PDF</button>
+                    </div>
                 </ResultsContainer>
             )}
         </>

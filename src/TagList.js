@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { categoryColors } from "./CategoryColors";
 import { Tooltip } from "react-tooltip";
 
-const TagList = ({ categories = [] }) => {
+const TagList = ({ categories = [], color }) => {
   return (
     <div
       style={{
@@ -22,16 +22,17 @@ const TagList = ({ categories = [] }) => {
         >
           <span
             style={{
-              backgroundColor: categoryColors[category] || "#ccc",
+              backgroundColor: color || "#ccc",
               color: "white",
               padding: "0.2rem 0.4rem",
               borderRadius: "8px",
-              fontSize: "1.3vw",
+              fontSize: "1.2vw",
               fontWeight: 500,
-              fontFamily: "Nunito, sans-serif",
+              fontFamily: "Sanchez, sans-serif",
               whiteSpace: "nowrap",
               boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
               cursor: "pointer",
+              textShadow: "0 4px 8px rgba(0,0,0,0.2)"
             }}
           >
             {category}
