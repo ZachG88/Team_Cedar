@@ -15,7 +15,7 @@ const About = () => {
       </section>
 
       <section className="about-section about-sponsors">
-        <h2>About our Sponsors</h2>
+        <h2>About Our Sponsors</h2>
         <p>
           This initiative is supported by organizations dedicated to Indigenous career development and conservation efforts.
         </p>
