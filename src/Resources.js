@@ -17,22 +17,22 @@ const resources = [
     Details: "Search 'fish' etc. for relevant career paths in Washington state.",
   },
   {
-    Organization: "AG careers",
+    Organization: "AG Careers",
     Link: "https://www.agcareers.com/career-profiles",
     Details: "Fisheries technician, biologist, etc. related to food and environmental sciences.",
   },
   {
-    Organization: "Environmental Science - Green jobs info site",
+    Organization: "Environmental Science - Green Jobs Info Site",
     Link: "https://www.environmentalscience.org/careers",
     Details: "Various environmental science career paths and job opportunities.",
   },
   {
-    Organization: "AISES - Jobs in STEM board",
+    Organization: "AISES - Jobs in STEM Board",
     Link: "https://careers.aises.org/",
     Details: "",
   },
   {
-    Organization: "NAFWS - Jobs board",
+    Organization: "NAFWS - Jobs Board",
     Link: "https://www.nafws.org/resources/jobs/",
     Details: "",
   },

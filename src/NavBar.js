@@ -26,7 +26,7 @@ const Nav = () => {
                     Explore
                 </Link>
                 <Link to="/resources" style={{ marginRight: "15px" }}>
-                <img src="/worldNavBar.png" alt="Explore" className="nav-icon" />
+                <img src="/resourcesIconNavBar.png" alt="Explore" className="nav-icon" />
                     Resources
                 </Link>
             </div>

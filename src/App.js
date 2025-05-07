@@ -31,7 +31,7 @@ const Home = () => {
       {/* About the Career Explorer */}
       <section
   style={{
-    padding: "20px",
+    padding: "20px 5vw 20px 5vw",
     background: "#f9f9f9",
     display: "flex",
     alignItems: "center",
