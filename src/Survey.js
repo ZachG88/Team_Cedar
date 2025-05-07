@@ -367,7 +367,7 @@ const Survey = () => {
                         width: "100%"
                     }}>
                         <img
-                        src="/resultsBanner.png"
+                        src="/resultsHeader.png"
                         alt="Mountains and Trees…"
                         className="full-width-image fade-in"
                         />
@@ -388,7 +388,7 @@ const Survey = () => {
                                 >
                                               <div className="career-card-inner">
                                                 <div className="career-card-front" data-tooltip-content="Click to flip" data-tooltip-id="card-tooltip" data-tooltip-place="bottom">
-                                                  <img src={getRandomImage(career.id)} alt={career.title} />
+                                                  <img src={career.image} alt={career.title} />
                                                   <h2 style={{fontFamily:"Sanchez, sans-serif"}}>{career.title}</h2>
                                                 </div>
                                                 <div className="career-card-back" 
